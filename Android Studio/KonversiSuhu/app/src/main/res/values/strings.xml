@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Konversi Suhu</string>
+    <string name="thermometer_description">Thermometer image</string>
+    <string name="conversion_label">Pilihan Konversi</string>
+    <string name="enter_value">Masukkan Nilai</string>
+    <string name="convert_button">Konversi</string>
+    <string-array name="pilihan">
+        <item> Celsius to Reamur</item>
+        <item> Celsius to Fahrenheit</item>
+        <item> Celsius to Kelvin</item>
+        <item> Reamur to Celsius</item>
+        <item> Reamur to Fahrenheit</item>
+        <item> Reamur to Kelvin</item>
+        <item> Fahrenheit to Celcius</item>
+        <item> Fahrenheit to Reamur</item>
+        <item> Kelvin to Celcius</item>
+        <item> Kelvin to Reamur</item>
+    </string-array>
+</resources>
