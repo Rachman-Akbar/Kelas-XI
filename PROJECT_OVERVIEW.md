@@ -7,8 +7,9 @@ Repository ini berisi kumpulan project pembelajaran untuk Android Development, m
 ### 🗂️ Struktur Folder
 
 #### 1. Android Studio - Basic Projects
+
 - **CardView** - Implementasi Card View
-- **Counter** - Aplikasi Counter sederhana  
+- **Counter** - Aplikasi Counter sederhana
 - **DatePicker** - Penggunaan Date Picker
 - **HelloWorld** - Project pertama Android
 - **IntentActivity** - Navigation antar Activity
@@ -22,17 +23,21 @@ Repository ini berisi kumpulan project pembelajaran untuk Android Development, m
 - **VectorAsset** - Penggunaan icon vector
 
 #### 2. Projek Android Studio - Advanced
+
 - **Bottom Navigation Views** - Social Media App dengan Firebase
 - **Empty Views** - Template projects
 - **Navigation Drawer Views** - Side navigation
 
 #### 3. Android Studio Firebase
+
 - **FirebaseTutorial** - Tutorial Firebase integration
 
 #### 4. React Firebase
+
 - **youtube_react_firebase_database** - React dengan Firebase
 
 #### 5. Jetpack Compose - Modern Android UI
+
 - **AnimationDemo** - Animasi di Compose
 - **BottomNavigationDemo** - Bottom navigation
 - **Calculator** - Kalkulator dengan Compose
@@ -51,6 +56,7 @@ Repository ini berisi kumpulan project pembelajaran untuk Android Development, m
 - **TodoApp** - Aplikasi Todo dengan Room
 
 #### 6. PJBL Jetpack Compose - Project Based Learning
+
 - **AplikasiMonitoringKelas** - Sistem monitoring kelas sekolah
 - **BasicAndroid** - Pembelajaran dasar
 - **MultiActivity** - Multiple activities
@@ -60,6 +66,7 @@ Repository ini berisi kumpulan project pembelajaran untuk Android Development, m
 ⚠️ **PENTING**: File-file konfigurasi rahasia seperti API keys dan service accounts telah dihapus untuk keamanan.
 
 Jika Anda ingin menjalankan project yang memerlukan:
+
 - **Firebase**: Buat file `google-services.json` Anda sendiri
 - **OpenAI API**: Ganti placeholder di `OpenAIConfig.kt` dengan API key Anda
 - **Service Accounts**: Tambahkan credentials Anda sendiri
@@ -75,6 +82,7 @@ Jika Anda ingin menjalankan project yang memerlukan:
 ## 📚 Tujuan Pembelajaran
 
 Repository ini dibuat untuk:
+
 - Pembelajaran Android Development dari basic hingga advanced
 - Praktik Jetpack Compose
 - Integrasi dengan Firebase
@@ -86,4 +94,5 @@ Repository ini dibuat untuk:
 Untuk pertanyaan atau diskusi tentang project-project ini, silakan buat issue di repository ini.
 
 ---
+
 **Happy Coding! 🎉**
