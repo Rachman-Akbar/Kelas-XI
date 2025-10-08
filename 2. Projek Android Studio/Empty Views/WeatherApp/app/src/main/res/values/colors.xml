@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Dynamic Weather Colors -->
+    <color name="sunny_start">#FFD700</color>
+    <color name="sunny_middle">#FF8C00</color>
+    <color name="sunny_end">#FF4500</color>
+    
+    <color name="cloudy_start">#87CEEB</color>
+    <color name="cloudy_middle">#B0C4DE</color>
+    <color name="cloudy_end">#708090</color>
+    
+    <color name="rainy_start">#4682B4</color>
+    <color name="rainy_middle">#2F4F4F</color>
+    <color name="rainy_end">#191970</color>
+    
+    <color name="snowy_start">#F0F8FF</color>
+    <color name="snowy_middle">#E6E6FA</color>
+    <color name="snowy_end">#D3D3D3</color>
+    
+    <color name="stormy_start">#2F2F2F</color>
+    <color name="stormy_middle">#4B0082</color>
+    <color name="stormy_end">#000000</color>
+    
+    <color name="night_start">#1a1a2e</color>
+    <color name="night_middle">#16213e</color>
+    <color name="night_end">#0f3460</color>
+    
+    <!-- Glass Morphism -->
+    <color name="glass_white">#1AFFFFFF</color>
+    <color name="glass_dark">#1A000000</color>
+    <color name="glass_border">#33FFFFFF</color>
+    <color name="glass_border_dark">#33000000</color>
+    
+    <!-- Accent Colors -->
+    <color name="electric_blue">#00D4FF</color>
+    <color name="text_primary_light">#FFFFFF</color>
+    <color name="text_primary_dark">#333333</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_secondary_dark">#757575</color>
+</resources>

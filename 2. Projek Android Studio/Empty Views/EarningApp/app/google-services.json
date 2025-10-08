@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "942466606409",
+    "firebase_url": "https://earningapp-cd3cd-default-rtdb.firebaseio.com",
+    "project_id": "earningapp-cd3cd",
+    "storage_bucket": "earningapp-cd3cd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942466606409:android:26c5006250c92a06a6e698",
+        "android_client_info": {
+          "package_name": "com.komputerkit.earningapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942466606409-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.komputerkit.earningapp",
+            "certificate_hash": "1234567890abcdef1234567890abcdef12345678"
+          }
+        },
+        {
+          "client_id": "942466606409-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZVGXES5-o_SjqJERM_EAOTxZP8B8BZSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942466606409-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "analytics_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "whatsapp-data-import",
+  "version": "1.0.0",
+  "description": "Data import script for WhatsApp clone using Firebase Admin SDK",
+  "main": "import.js",
+  "scripts": {
+    "start": "node import.js",
+    "import-users": "node import-users.js",
+    "import-chats": "node import-chats.js",
+    "import-messages": "node import-messages.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "author": "WhatsApp Clone Developer",
+  "license": "MIT"
+}

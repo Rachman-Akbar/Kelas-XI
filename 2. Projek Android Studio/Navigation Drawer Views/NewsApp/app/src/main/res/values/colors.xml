@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- News App Color Scheme -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Custom News App Colors -->
+    <color name="news_primary">#1976D2</color>
+    <color name="news_primary_dark">#1565C0</color>
+    <color name="news_primary_light">#42A5F5</color>
+    <color name="news_accent">#FF5722</color>
+    <color name="news_accent_light">#FF8A65</color>
+    <color name="news_background">#F5F5F5</color>
+    <color name="news_surface">#FFFFFF</color >
+    <color name="news_text_primary">#212121</color>
+    <color name="news_text_secondary">#757575</color>
+    <color name="news_divider">#BDBDBD</color>
+    
+    <!-- Brand Colors -->
+    <color name="bbc_red">#BB1919</color>
+    <color name="cnn_red">#CC0000</color>
+    <color name="fox_blue">#003366</color>
+    <color name="sky_blue">#0057B8</color>
+    <color name="aljazeera_gold">#C9A961</color>
+</resources>

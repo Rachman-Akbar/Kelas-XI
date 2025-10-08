@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SocialMedia</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    
+    <!-- Content descriptions -->
+    <string name="profile_image">Profile Image</string>
+    <string name="post_image">Post Image</string>
+    <string name="story_image">Story Image</string>
+    <string name="explore_post_image">Explore Post Image</string>
+    <string name="heart_icon">Heart Icon</string>
+    <string name="comment_icon">Comment Icon</string>
+    <string name="share_icon">Share Icon</string>
+    <string name="bookmark_icon">Bookmark Icon</string>
+    <string name="menu_icon">Menu Icon</string>
+    <string name="profile_post_image">Profile Post Image</string>
+</resources>

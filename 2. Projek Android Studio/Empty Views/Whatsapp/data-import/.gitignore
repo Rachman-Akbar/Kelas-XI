@@ -1,0 +1,31 @@
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+
+# Generated files
+user-mapping.json
+
+# Firebase service account key
+*-firebase-adminsdk-*.json
+service-account-key.json
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,66 @@
+[
+  {
+    "username": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "Available",
+    "lastSeen": 1696435200000
+  },
+  {
+    "username": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "Busy",
+    "lastSeen": 1696438800000
+  },
+  {
+    "username": "Mike Johnson",
+    "email": "mike.johnson@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "At work",
+    "lastSeen": 1696442400000
+  },
+  {
+    "username": "Sarah Wilson",
+    "email": "sarah.wilson@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "Available",
+    "lastSeen": 1696446000000
+  },
+  {
+    "username": "David Brown",
+    "email": "david.brown@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "Do not disturb",
+    "lastSeen": 1696449600000
+  },
+  {
+    "username": "Lisa Garcia",
+    "email": "lisa.garcia@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "Available",
+    "lastSeen": 1696453200000
+  },
+  {
+    "username": "Robert Miller",
+    "email": "robert.miller@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "In a meeting",
+    "lastSeen": 1696456800000
+  },
+  {
+    "username": "Emily Davis",
+    "email": "emily.davis@example.com",
+    "password": "password123",
+    "profilePic": "",
+    "status": "Available",
+    "lastSeen": 1696460400000
+  }
+]

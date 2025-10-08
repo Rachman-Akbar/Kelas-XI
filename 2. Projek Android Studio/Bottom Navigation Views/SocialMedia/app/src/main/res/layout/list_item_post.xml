@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/white"
+    android:padding="0dp">
+
+    <!-- Header Section -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_post_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="12dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_post_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Username"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_post_profile"
+        app:layout_constraintEnd_toStartOf="@id/iv_post_menu"
+        app:layout_constraintStart_toEndOf="@id/iv_post_profile"
+        app:layout_constraintTop_toTopOf="@id/iv_post_profile" />
+
+    <ImageView
+        android:id="@+id/iv_post_menu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/ripple_circle"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="4dp"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_menu_more"
+        android:tint="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Main Content Section -->
+    <ImageView
+        android:id="@+id/iv_post_image"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_post_profile" />
+
+    <!-- Footer Section -->
+    <LinearLayout
+        android:id="@+id/ll_post_actions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_post_image">
+
+        <!-- Like Button (Heart) -->
+        <ImageView
+            android:id="@+id/iv_post_like"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="2dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_heart_outline"
+            android:contentDescription="Like" />
+
+        <!-- Comment Button -->
+        <ImageView
+            android:id="@+id/iv_post_comment"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="2dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_comment_outline"
+            android:contentDescription="Comment" />
+
+        <!-- Share Button -->
+        <ImageView
+            android:id="@+id/iv_post_share"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="2dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_send"
+            android:contentDescription="Share" />
+
+    </LinearLayout>
+
+    <!-- Like count and caption -->
+    <TextView
+        android:id="@+id/tv_post_likes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="0 likes"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_post_actions" />
+
+    <TextView
+        android:id="@+id/tv_post_caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="Caption text goes here..."
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_post_likes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

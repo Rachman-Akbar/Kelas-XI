@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutUtama"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Judul -->
+    <TextView
+        android:id="@+id/tvPilihan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Input Data Barang"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:paddingBottom="8dp" />
+
+    <!-- Nama Barang -->
+    <EditText
+        android:id="@+id/etBarang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nama Barang"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/tvPilihan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Harga Barang -->
+    <EditText
+        android:id="@+id/etHarga"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Harga Barang"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/etBarang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Stok Barang -->
+    <EditText
+        android:id="@+id/etStok"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Stok Barang"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/etHarga"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Tombol Simpan -->
+    <Button
+        android:id="@+id/btnSimpan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:onClick="btnSimpan"
+        app:layout_constraintTop_toBottomOf="@+id/etStok"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- List Data Barang -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvBarang"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSimpan"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_barang" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

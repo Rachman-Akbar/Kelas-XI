@@ -1,0 +1,25 @@
+{
+  "name": "earningapp-data-importer",
+  "version": "1.0.0",
+  "description": "Node.js script to import sample data to Firestore for EarningApp",
+  "main": "import-data.js",
+  "scripts": {
+    "import": "node import-data.js",
+    "import-subjects": "node import-subjects.js",
+    "import-questions": "node import-questions.js",
+    "import-users": "node import-users.js",
+    "import-all": "npm run import-subjects && npm run import-questions && npm run import-users"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "keywords": [
+    "firebase",
+    "firestore",
+    "data-import",
+    "education-app"
+  ],
+  "author": "EarningApp Team",
+  "license": "MIT"
+}

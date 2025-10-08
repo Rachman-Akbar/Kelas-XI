@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QuotesApp</string>
+    <string name="app_logo">Application Logo</string>
+    <string name="sample_quote">"The only way to do great work is to love what you do."</string>
+    <string name="sample_author">- Steve Jobs</string>
+    <string name="share_option">Share Quote</string>
+    <string name="share_chooser_title">Share Quote Via</string>
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Modern Primary Colors - Blue Theme -->
+    <color name="primary">#1E40AF</color>
+    <color name="primary_color">#1E40AF</color>
+    <color name="primary_blue">#1E40AF</color>
+    <color name="primary_dark_blue">#1E3A8A</color>
+    <color name="primary_dark">#1E3A8A</color>
+    <color name="dark_blue">#1D4ED8</color>
+    <color name="light_blue">#DBEAFE</color>
+    <color name="primary_light">#93C5FD</color>
+    <color name="primary_50">#EFF6FF</color>
+    <color name="primary_100">#DBEAFE</color>
+    <color name="primary_200">#BFDBFE</color>
+    <color name="primary_300">#93C5FD</color>
+    <color name="primary_400">#60A5FA</color>
+    <color name="primary_500">#3B82F6</color>
+    <color name="primary_600">#2563EB</color>
+    <color name="primary_700">#1D4ED8</color>
+    <color name="primary_800">#1E40AF</color>
+    <color name="primary_900">#1E3A8A</color>
+    
+    <!-- Modern Accent Colors -->
+    <color name="accent_color">#F59E0B</color>
+    <color name="accent_light">#FEF3C7</color>
+    <color name="accent_green">#10B981</color>
+    <color name="accent_orange">#F59E0B</color>
+    <color name="accent_red">#EF4444</color>
+    <color name="accent_purple">#8B5CF6</color>
+    <color name="accent_pink">#EC4899</color>
+    <color name="accent_indigo">#6366F1</color>
+    
+    <!-- Semantic Colors -->
+    <color name="success">#10B981</color>
+    <color name="success_light">#D1FAE5</color>
+    <color name="success_dark">#065F46</color>
+    
+    <color name="error">#EF4444</color>
+    <color name="error_light">#FEE2E2</color>
+    <color name="error_dark">#991B1B</color>
+    
+    <color name="warning">#F59E0B</color>
+    <color name="warning_light">#FEF3C7</color>
+    <color name="warning_dark">#92400E</color>
+    
+    <color name="info">#3B82F6</color>
+    <color name="info_light">#DBEAFE</color>
+    <color name="info_dark">#1E40AF</color>
+    
+    <!-- Modern Background Colors -->
+    <color name="background_color">#F8FAFC</color>
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_secondary">#F1F5F9</color>
+    <color name="background_dark">#0F172A</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F8FAFC</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_tertiary">#94A3B8</color>
+    <color name="text_hint">#CBD5E1</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_disabled">#E2E8F0</color>
+    
+    <!-- Difficulty Colors -->
+    <color name="difficulty_easy">#10B981</color>
+    <color name="difficulty_easy_bg">#D1FAE5</color>
+    <color name="difficulty_medium">#F59E0B</color>
+    <color name="difficulty_medium_bg">#FEF3C7</color>
+    <color name="difficulty_hard">#EF4444</color>
+    <color name="difficulty_hard_bg">#FEE2E2</color>
+    
+    <!-- Gold Colors for Coins -->
+    <color name="gold">#F59E0B</color>
+    <color name="gold_light">#FEF3C7</color>
+    <color name="gold_dark">#D97706</color>
+    <color name="light_gold">#FFFBEB</color>
+    
+    <!-- Gray Scale -->
+    <color name="gray_50">#F8FAFC</color>
+    <color name="gray_100">#F1F5F9</color>
+    <color name="gray_200">#E2E8F0</color>
+    <color name="gray_300">#CBD5E1</color>
+    <color name="gray_400">#94A3B8</color>
+    <color name="gray_500">#64748B</color>
+    <color name="gray_600">#475569</color>
+    <color name="gray_700">#334155</color>
+    <color name="gray_800">#1E293B</color>
+    <color name="gray_900">#0F172A</color>
+    
+    <!-- Alpha Colors -->
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
+    <color name="black_10">#1A000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_50">#80000000</color>
+    
+    <!-- Dividers and Borders -->
+    <color name="divider">#E2E8F0</color>
+    <color name="border_light">#F1F5F9</color>
+    <color name="border_medium">#E2E8F0</color>
+    <color name="border_dark">#CBD5E1</color>
+    <color name="shadow">#1A000000</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#667EEA</color>
+    <color name="gradient_end">#764BA2</color>
+    <color name="gradient_blue_start">#4776E6</color>
+    <color name="gradient_blue_end">#8E54E9</color>
+    <color name="gradient_green_start">#11998E</color>
+    <color name="gradient_green_end">#38EF7D</color>
+    <color name="gradient_orange_start">#F953C6</color>
+    <color name="gradient_orange_end">#B91D73</color>
+
+    <!-- Missing Colors -->
+    <!-- Additional Missing Colors -->
+    <color name="error_700">#C62828</color>
+    <color name="primary_alpha_20">#33007FFF</color>
+    <color name="white_alpha_30">#4DFFFFFF</color>
+    <color name="surface_light">#FAFAFA</color>
+    <color name="black_alpha_20">#33000000</color>
+    <color name="white_alpha_20">#33FFFFFF</color>
+
+    <!-- Quiz Colors -->
+    <color name="selected_answer">#4CAF50</color>
+    <color name="default_button">#F5F5F5</color>
+    <color name="button_background">#E3F2FD</color>
+    <color name="button_text">#1565C0</color>
+    <color name="danger_color">#F44336</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+
+</resources>

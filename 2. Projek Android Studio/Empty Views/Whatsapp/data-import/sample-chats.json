@@ -1,0 +1,121 @@
+[
+  {
+    "senderEmail": "john.doe@example.com",
+    "receiverEmail": "jane.smith@example.com",
+    "messages": [
+      {
+        "messageText": "Hey Jane! How are you doing?",
+        "timestamp": 1696435200000
+      },
+      {
+        "messageText": "I'm doing great, thanks for asking!",
+        "timestamp": 1696435260000,
+        "fromReceiver": true
+      },
+      {
+        "messageText": "That's awesome! Want to grab lunch sometime?",
+        "timestamp": 1696435320000
+      },
+      {
+        "messageText": "Sure! How about tomorrow at 12?",
+        "timestamp": 1696435380000,
+        "fromReceiver": true
+      },
+      {
+        "messageText": "Perfect! See you then 😊",
+        "timestamp": 1696435440000
+      }
+    ]
+  },
+  {
+    "senderEmail": "mike.johnson@example.com",
+    "receiverEmail": "john.doe@example.com",
+    "messages": [
+      {
+        "messageText": "John, did you finish the project report?",
+        "timestamp": 1696436200000
+      },
+      {
+        "messageText": "Yes, I sent it to you this morning. Did you receive it?",
+        "timestamp": 1696436260000,
+        "fromReceiver": true
+      },
+      {
+        "messageText": "Got it! Thanks, it looks great.",
+        "timestamp": 1696436320000
+      }
+    ]
+  },
+  {
+    "senderEmail": "sarah.wilson@example.com",
+    "receiverEmail": "lisa.garcia@example.com",
+    "messages": [
+      {
+        "messageText": "Lisa! Are you coming to the party tonight?",
+        "timestamp": 1696440000000
+      },
+      {
+        "messageText": "Yes! What should I bring?",
+        "timestamp": 1696440060000,
+        "fromReceiver": true
+      },
+      {
+        "messageText": "Maybe some snacks? We have drinks covered.",
+        "timestamp": 1696440120000
+      },
+      {
+        "messageText": "Perfect! I'll bring chips and dip.",
+        "timestamp": 1696440180000,
+        "fromReceiver": true
+      }
+    ]
+  },
+  {
+    "senderEmail": "david.brown@example.com",
+    "receiverEmail": "emily.davis@example.com",
+    "messages": [
+      {
+        "messageText": "Emily, can you help me with the presentation?",
+        "timestamp": 1696445000000
+      },
+      {
+        "messageText": "Of course! What do you need help with?",
+        "timestamp": 1696445060000,
+        "fromReceiver": true
+      },
+      {
+        "messageText": "I need help with the design slides.",
+        "timestamp": 1696445120000
+      },
+      {
+        "messageText": "I can help you with that. Let's meet at 3 PM.",
+        "timestamp": 1696445180000,
+        "fromReceiver": true
+      }
+    ]
+  },
+  {
+    "senderEmail": "robert.miller@example.com",
+    "receiverEmail": "sarah.wilson@example.com",
+    "messages": [
+      {
+        "messageText": "Sarah, are we still on for the movie tonight?",
+        "timestamp": 1696448000000
+      },
+      {
+        "messageText": "Yes! What time should we meet?",
+        "timestamp": 1696448060000,
+        "fromReceiver": true
+      },
+      {
+        "messageText": "How about 7 PM at the cinema?",
+        "timestamp": 1696448120000
+      },
+      {
+        "messageText": "Sounds perfect! See you there.",
+        "timestamp": 1696448180000,
+        "fromReceiver": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="40dp"
+    android:viewportWidth="24"
+    android:viewportHeight="40">
+    
+    <!-- Main triangle pointer with gradient effect -->
+    <path
+        android:fillColor="@color/accent_red"
+        android:pathData="M12,0L0,30L24,30z"/>
+    
+    <!-- Inner triangle for depth -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M12,6L6,24L18,24z"/>
+    
+    <!-- Shadow effect -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M12,1L1,30L23,30z"/>
+    
+    <!-- White outline for clarity -->
+    <path
+        android:strokeColor="@color/white"
+        android:strokeWidth="2"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M12,0L0,30L24,30z"/>
+        
+    <!-- Small dot at the tip -->
+    <path
+        android:fillColor="@color/accent_red"
+        android:pathData="M12,0m-2,0a2,2 0,1,1 4,0a2,2 0,1,1 -4,0"/>
+</vector>

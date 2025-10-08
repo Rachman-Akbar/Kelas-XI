@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="300dp"
+    android:viewportWidth="300"
+    android:viewportHeight="300">
+
+    <!-- 8 segments instead of 5 for better appearance -->
+    <!-- Segment 1: 100 coins -->
+    <path
+        android:fillColor="@color/gold"
+        android:pathData="M150,150 L150,10 A140,140 0 0,1 248.5,52 Z"/>
+
+    <!-- Segment 2: 50 coins -->
+    <path
+        android:fillColor="@color/accent_green"
+        android:pathData="M150,150 L248.5,52 A140,140 0 0,1 290,150 Z"/>
+
+    <!-- Segment 3: 25 coins -->
+    <path
+        android:fillColor="@color/accent_orange"
+        android:pathData="M150,150 L290,150 A140,140 0 0,1 248.5,248 Z"/>
+
+    <!-- Segment 4: 10 coins -->
+    <path
+        android:fillColor="@color/accent_red"
+        android:pathData="M150,150 L248.5,248 A140,140 0 0,1 150,290 Z"/>
+
+    <!-- Segment 5: 100 coins -->
+    <path
+        android:fillColor="@color/gold"
+        android:pathData="M150,150 L150,290 A140,140 0 0,1 51.5,248 Z"/>
+
+    <!-- Segment 6: 50 coins -->
+    <path
+        android:fillColor="@color/accent_green"
+        android:pathData="M150,150 L51.5,248 A140,140 0 0,1 10,150 Z"/>
+
+    <!-- Segment 7: 25 coins -->
+    <path
+        android:fillColor="@color/accent_orange"
+        android:pathData="M150,150 L10,150 A140,140 0 0,1 51.5,52 Z"/>
+
+    <!-- Segment 8: 10 coins -->
+    <path
+        android:fillColor="@color/accent_red"
+        android:pathData="M150,150 L51.5,52 A140,140 0 0,1 150,10 Z"/>
+
+    <!-- Outer ring for better definition -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/white"
+        android:strokeWidth="4"
+        android:pathData="M150,150m-140,0a140,140 0,1,1 280,0a140,140 0,1,1 -280,0"/>
+
+    <!-- Text labels for each segment -->
+    <!-- These will be positioned using text views in the layout -->
+    
+    <!-- Center circle -->
+    <path
+        android:fillColor="@color/white"
+        android:strokeColor="@color/primary"
+        android:strokeWidth="3"
+        android:pathData="M150,150m-25,0a25,25 0,1,1 50,0a25,25 0,1,1 -50,0"/>
+
+    <!-- Center dot -->
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M150,150m-8,0a8,8 0,1,1 16,0a8,8 0,1,1 -16,0"/>
+
+</vector>

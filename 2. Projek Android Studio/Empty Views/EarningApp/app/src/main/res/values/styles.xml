@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Professional Button Styles -->
+    <style name="ButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">@dimen/button_height_md</item>
+        <item name="android:paddingHorizontal">@dimen/spacing_xl</item>
+        <item name="android:paddingVertical">@dimen/spacing_sm</item>
+        <item name="cornerRadius">@dimen/border_radius_sm</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:elevation">@dimen/elevation_sm</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="ButtonStyle.Primary">
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="ButtonStyle.Secondary">
+        <item name="backgroundTint">@color/gray_600</item>
+    </style>
+
+    <style name="ButtonStyle.Success">
+        <item name="backgroundTint">@color/success</item>
+    </style>
+
+    <style name="ButtonStyle.Warning">
+        <item name="backgroundTint">@color/warning</item>
+    </style>
+
+    <style name="ButtonStyle.Error">
+        <item name="backgroundTint">@color/error</item>
+    </style>
+
+    <style name="ButtonStyle.Outline" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">@dimen/button_height_md</item>
+        <item name="android:paddingHorizontal">@dimen/spacing_xl</item>
+        <item name="android:paddingVertical">@dimen/spacing_sm</item>
+        <item name="cornerRadius">@dimen/border_radius_sm</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <style name="ButtonStyle.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">@dimen/button_height_md</item>
+        <item name="android:paddingHorizontal">@dimen/spacing_xl</item>
+        <item name="android:paddingVertical">@dimen/spacing_sm</item>
+    </style>
+
+    <style name="ButtonStyle.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">@dimen/button_height_md</item>
+        <item name="android:paddingHorizontal">@dimen/spacing_xl</item>
+        <item name="android:paddingVertical">@dimen/spacing_sm</item>
+        <item name="cornerRadius">@dimen/border_radius_sm</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="CardStyle" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/border_radius_md</item>
+        <item name="cardElevation">@dimen/elevation_sm</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="android:layout_margin">@dimen/spacing_xs</item>
+    </style>
+
+    <style name="CardStyle.Subject">
+        <item name="cardCornerRadius">@dimen/border_radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_md</item>
+        <item name="android:layout_margin">@dimen/spacing_sm</item>
+    </style>
+
+    <style name="CardStyle.Modern">
+        <item name="cardCornerRadius">@dimen/border_radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_md</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:layout_margin">@dimen/spacing_sm</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="TextStyle">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_size_md</item>
+    </style>
+
+    <style name="TextStyle.Heading1">
+        <item name="android:textSize">@dimen/text_size_display</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Heading2">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Heading3">
+        <item name="android:textSize">@dimen/text_size_xxxl</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Heading4">
+        <item name="android:textSize">@dimen/text_size_xxl</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Body1">
+        <item name="android:textSize">@dimen/text_size_lg</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Body2">
+        <item name="android:textSize">@dimen/text_size_md</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextStyle.Caption">
+        <item name="android:textSize">@dimen/text_size_sm</item>
+        <item name="android:textColor">@color/text_tertiary</item>
+    </style>
+
+    <style name="TextStyle.Caption.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyle.Overline">
+        <item name="android:textSize">@dimen/text_size_xs</item>
+        <item name="android:textColor">@color/text_tertiary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <!-- Additional Text Styles -->
+    <style name="TextStyle.Display">
+        <item name="android:textSize">@dimen/text_size_display</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Title">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Body">
+        <item name="android:textSize">@dimen/text_size_md</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextStyle.Body.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyle.Heading">
+        <item name="android:textSize">@dimen/text_size_xxl</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- Input Field Styles -->
+    <style name="InputFieldStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/border_radius_sm</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/border_radius_sm</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/border_radius_sm</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/border_radius_sm</item>
+        <item name="hintTextColor">@color/primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+    </style>
+
+    <!-- Icon Styles -->
+    <style name="IconStyle">
+        <item name="android:layout_width">@dimen/icon_size_md</item>
+        <item name="android:layout_height">@dimen/icon_size_md</item>
+        <item name="android:tint">@color/text_secondary</item>
+    </style>
+
+    <style name="IconStyle.Small">
+        <item name="android:layout_width">@dimen/icon_size_sm</item>
+        <item name="android:layout_height">@dimen/icon_size_sm</item>
+    </style>
+
+    <style name="IconStyle.Large">
+        <item name="android:layout_width">@dimen/icon_size_lg</item>
+        <item name="android:layout_height">@dimen/icon_size_lg</item>
+    </style>
+
+    <style name="IconStyle.Primary">
+        <item name="android:tint">@color/primary</item>
+    </style>
+
+    <style name="IconStyle.Success">
+        <item name="android:tint">@color/success</item>
+    </style>
+
+    <style name="IconStyle.Warning">
+        <item name="android:tint">@color/warning</item>
+    </style>
+
+    <style name="IconStyle.Error">
+        <item name="android:tint">@color/error</item>
+    </style>
+
+    <!-- Difficulty Badge Styles -->
+    <style name="DifficultyBadgeStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingHorizontal">@dimen/spacing_sm</item>
+        <item name="android:paddingVertical">@dimen/spacing_xxs</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_xs</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Progress Bar Styles -->
+    <style name="ProgressBarStyle" parent="Widget.Material3.LinearProgressIndicator">
+        <item name="trackColor">@color/gray_200</item>
+        <item name="indicatorColor">@color/primary</item>
+        <item name="trackCornerRadius">@dimen/border_radius_xs</item>
+        <item name="android:layout_height">8dp</item>
+    </style>
+
+    <!-- Divider Styles -->
+    <style name="DividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divider</item>
+        <item name="android:layout_marginVertical">@dimen/spacing_md</item>
+    </style>
+
+    <!-- Floating Action Button Styles -->
+    <style name="FABStyle" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="tint">@color/white</item>
+        <item name="elevation">@dimen/elevation_lg</item>
+        <item name="pressedTranslationZ">@dimen/elevation_xl</item>
+    </style>
+
+    <!-- Bottom Navigation Styles -->
+    <style name="BottomNavigationStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/white</item>
+        <item name="itemIconTint">@color/primary</item>
+        <item name="itemTextColor">@color/primary</item>
+        <item name="elevation">@dimen/elevation_md</item>
+    </style>
+
+    <!-- Toolbar Styles -->
+    <style name="ToolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/white</item>
+        <item name="android:elevation">@dimen/elevation_sm</item>
+    </style>
+
+</resources>

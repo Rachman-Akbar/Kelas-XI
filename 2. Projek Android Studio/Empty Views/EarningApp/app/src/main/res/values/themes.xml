@@ -1,0 +1,90 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme with Material 3 Design -->
+    <style name="Base.Theme.EarningApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_100</item>
+        <item name="colorOnPrimaryContainer">@color/primary_900</item>
+
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/accent_color</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/warning_light</item>
+        <item name="colorOnSecondaryContainer">@color/warning_dark</item>
+
+        <!-- Tertiary colors -->
+        <item name="colorTertiary">@color/accent_purple</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/primary_50</item>
+        <item name="colorOnTertiaryContainer">@color/primary_900</item>
+
+        <!-- Error colors -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/error_light</item>
+        <item name="colorOnErrorContainer">@color/error_dark</item>
+
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/gray_50</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Outline colors -->
+        <item name="colorOutline">@color/gray_300</item>
+        <item name="colorOutlineVariant">@color/gray_200</item>
+
+        <!-- Status bar and navigation bar -->
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- System UI flags -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceDisplayLarge">@style/TextStyle.Heading1</item>
+        <item name="textAppearanceDisplayMedium">@style/TextStyle.Heading2</item>
+        <item name="textAppearanceDisplaySmall">@style/TextStyle.Heading3</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextStyle.Heading3</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextStyle.Heading4</item>
+        <item name="textAppearanceBodyLarge">@style/TextStyle.Body1</item>
+        <item name="textAppearanceBodyMedium">@style/TextStyle.Body2</item>
+        <item name="textAppearanceLabelMedium">@style/TextStyle.Caption</item>
+
+        <!-- Shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.Corner.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.Corner.Large</item>
+    </style>
+
+    <style name="Theme.EarningApp" parent="Base.Theme.EarningApp" />
+
+    <!-- Splash Theme -->
+    <style name="Theme.EarningApp.Splash" parent="Theme.EarningApp">
+        <item name="android:background">@color/primary</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <!-- Transparent Status Bar Theme -->
+    <style name="Theme.EarningApp.TransparentStatusBar" parent="Theme.EarningApp">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Fullscreen Theme -->
+    <style name="Theme.EarningApp.Fullscreen" parent="Theme.EarningApp">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

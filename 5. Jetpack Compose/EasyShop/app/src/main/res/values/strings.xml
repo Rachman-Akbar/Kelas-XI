@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">EasyShop</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="login">Masuk</string>
+    <string name="signup">Daftar</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Konfirmasi Password</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="phone">Nomor Telepon</string>
+    <string name="address">Alamat</string>
+    <string name="create_account">Daftar Akun</string>
+    <string name="already_have_account">Sudah punya akun?</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+</resources>
