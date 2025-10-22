@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
     <application
+        android:name=".AdminWOFApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,15 +16,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdminWOF">
+        
+        <!-- Admin Login Activity (Launcher) -->
         <activity
-            android:name=".MainActivity"
+            android:name=".view.auth.AdminLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- Admin Main Activity -->
+        <activity
+            android:name=".view.main.AdminMainActivity"
+            android:exported="false" />
+        
+        <!-- Order Management Activities -->
+        <activity
+            android:name=".view.order.OrdersManagementActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".view.order.OrderDetailActivity"
+            android:exported="false" />
+            
     </application>
 
 </manifest>

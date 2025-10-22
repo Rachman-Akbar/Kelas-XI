@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name=".WavesOfFoodApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,15 +15,73 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WavesOfFood">
+        
+        <!-- Splash Activity (Launcher) -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".view.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- Auth Activities -->
+        <activity
+            android:name=".view.auth.AuthActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".view.auth.LoginActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".view.auth.RegisterActivity"
+            android:exported="false" />
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        
+        <!-- Product Detail Activity -->
+        <activity
+            android:name=".view.product.ProductDetailActivity"
+            android:exported="false" />
+        
+        <!-- Cart Activity -->
+        <activity
+            android:name=".view.cart.CartActivity"
+            android:exported="false" />
+        
+        <!-- Checkout Activities -->
+        <activity
+            android:name=".view.checkout.CheckoutActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".view.checkout.OrderConfirmationActivity"
+            android:exported="false" />
+        
+        <!-- Profile & Orders Activities -->
+        <activity
+            android:name=".view.profile.ProfileActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".view.orders.OrdersActivity"
+            android:exported="false" />
+        
+        <activity
+            android:name=".view.orders.OrderDetailActivity"
+            android:exported="false" />
+        
+        <!-- Favorites Activity -->
+        <activity
+            android:name=".view.favorites.FavoritesActivity"
+            android:exported="false" />
+            
     </application>
 
 </manifest>
