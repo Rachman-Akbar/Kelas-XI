@@ -1,0 +1,13 @@
+# This is a sample configuration file for connecting to the backend API
+# Copy this file to local.properties in the same directory and update the values
+
+# Backend server IP address (replace with your computer's IP address)
+# For emulator: use 10.0.2.2
+# For real device on same WiFi: use your computer's IP address (e.g., 192.168.1.100)
+backend.ip=10.0.2.2
+
+# Backend server port (default is 8000)
+backend.port=8000
+
+# Protocol (http for local development, https for production)
+backend.protocol=http
