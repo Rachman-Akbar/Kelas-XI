@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Input Utang &amp; Piutang</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display">
+<div class="relative flex h-auto min-h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-4 justify-between sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
+<div class="flex w-12 items-center">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-600 dark:text-white">arrow_back_ios_new</span>
+</button>
+</div>
+<div class="flex-1 text-center">
+<h2 class="text-[#111418] dark:text-white text-base font-bold leading-tight tracking-tight uppercase">Input Utang &amp; Piutang</h2>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-gray-50 dark:bg-gray-800 text-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col flex-1 pb-32">
+<div class="p-4 mt-2">
+<div class="bg-gray-100 dark:bg-gray-800 p-1 rounded-xl flex">
+<button class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 bg-white dark:bg-gray-700 text-red-600 shadow-sm">
+<span class="size-2 rounded-full bg-red-600"></span>
+                        Utang
+                    </button>
+<button class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2 text-gray-500 hover:text-green-600">
+<span class="size-2 rounded-full bg-gray-300"></span>
+                        Piutang
+                    </button>
+</div>
+<p class="mt-3 text-[11px] text-gray-500 dark:text-gray-400 px-1">
+                    * Pilih <b>Utang</b> jika Anda meminjam uang, atau <b>Piutang</b> jika orang lain berutang kepada Anda.
+                </p>
+</div>
+<div class="px-4 space-y-5">
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider ml-1">Nama Pihak / Kontak</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-gray-400">person</span>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-xl py-4 pl-12 pr-4 text-sm focus:ring-primary focus:border-primary placeholder:text-gray-300 dark:placeholder:text-gray-600" placeholder="Contoh: PT. Abadi Jaya" type="text"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider ml-1">Nominal (IDR)</label>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-sm font-bold text-gray-400">Rp</span>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-xl py-4 pl-12 pr-4 text-lg font-bold text-red-600 focus:ring-primary focus:border-primary placeholder:text-gray-300" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider ml-1">Tanggal Jatuh Tempo</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-gray-400">calendar_today</span>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-xl py-4 pl-12 pr-4 text-sm focus:ring-primary focus:border-primary" type="date"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider ml-1">Keterangan / Deskripsi</label>
+<textarea class="w-full bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-xl py-4 px-4 text-sm focus:ring-primary focus:border-primary placeholder:text-gray-300 dark:placeholder:text-gray-600 resize-none" placeholder="Tuliskan catatan transaksi di sini..." rows="3"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary hover:bg-[#12569c] text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">save</span>
+                        Simpan Pencatatan
+                    </button>
+<button class="w-full mt-3 bg-transparent text-gray-500 text-sm font-medium py-2 rounded-xl">
+                        Batalkan
+                    </button>
+</div>
+</div>
+<div class="mx-4 mt-8 p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 rounded-xl">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-600 mt-0.5">info</span>
+<div>
+<p class="text-xs font-bold text-red-600">Peringatan Jatuh Tempo</p>
+<p class="text-[11px] text-red-500/80 leading-relaxed mt-1">Sistem akan memberikan notifikasi otomatis 3 hari sebelum tanggal jatuh tempo yang Anda tentukan.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 px-4 py-3 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[9px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="text-[9px] font-medium">HPP-BEP</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined !fill-1">payments</span>
+<span class="text-[9px] font-bold">Hutang</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[9px] font-medium">Transaksi</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[9px] font-medium">Laporan</span>
+</button>
+</div>
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full z-50"></div>
+</div>
+
+</body></html>

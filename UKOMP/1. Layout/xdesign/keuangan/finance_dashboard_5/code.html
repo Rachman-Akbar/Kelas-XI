@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Utang &amp; Piutang</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            @apply border-b-2 border-primary text-primary;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display">
+<div class="relative flex h-auto min-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<div class="flex items-center bg-white dark:bg-background-dark px-4 py-3 sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-start min-w-[40px]">
+<button class="flex items-center justify-start">
+<span class="material-symbols-outlined !text-[24px]">arrow_back_ios</span>
+</button>
+</div>
+<div class="flex-1 px-2 overflow-hidden">
+<h1 class="text-[#111418] dark:text-white text-base font-bold leading-tight truncate text-center">Utang &amp; Piutang</h1>
+</div>
+<div class="flex items-center justify-end gap-2 min-w-[80px]">
+<button class="flex size-9 cursor-pointer items-center justify-center rounded-full bg-gray-50 dark:bg-gray-800 text-[#111418] dark:text-white" title="History">
+<span class="material-symbols-outlined !text-[22px]">history</span>
+</button>
+<button class="flex size-9 cursor-pointer items-center justify-center rounded-full bg-gray-50 dark:bg-gray-800 text-[#111418] dark:text-white" title="Filter">
+<span class="material-symbols-outlined !text-[22px]">filter_list</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col flex-1 pb-32">
+<div class="p-4 flex gap-3">
+<div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<p class="text-gray-500 dark:text-gray-400 text-[10px] font-semibold uppercase tracking-wider mb-1">Total Utang</p>
+<p class="text-red-600 dark:text-red-400 text-lg font-bold leading-tight">Rp 245.000k</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[10px] text-gray-400 font-medium">12 Tagihan Aktif</span>
+</div>
+</div>
+<div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<p class="text-gray-500 dark:text-gray-400 text-[10px] font-semibold uppercase tracking-wider mb-1">Total Piutang</p>
+<p class="text-green-600 dark:text-green-400 text-lg font-bold leading-tight">Rp 412.800k</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[10px] text-gray-400 font-medium">8 Piutang Aktif</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark px-4 flex border-b border-gray-100 dark:border-gray-800">
+<button class="flex-1 py-3 text-sm font-bold active-tab">Hutang</button>
+<button class="flex-1 py-3 text-sm font-medium text-gray-500">Piutang</button>
+</div>
+<div class="p-4 flex gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+<input class="w-full bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-primary focus:border-primary" placeholder="Cari vendor atau tagihan..." type="text"/>
+</div>
+</div>
+<div class="px-4 flex flex-col gap-3">
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-50 dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-bold text-sm text-[#111418] dark:text-white">PT. Bahan Baku Sejahtera</h4>
+<p class="text-[10px] text-gray-500">INV-2023-0089 • Jatuh tempo 24 Okt</p>
+</div>
+<span class="bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Mendekati</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs text-gray-400">Total Tagihan</p>
+<p class="text-sm font-bold text-[#111418] dark:text-white">Rp 12.500.000</p>
+</div>
+<button class="text-primary text-xs font-bold px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20">Bayar</button>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-50 dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-bold text-sm text-[#111418] dark:text-white">Logistik Global Mandiri</h4>
+<p class="text-[10px] text-gray-500">INV-2023-0072 • Jatuh tempo 15 Okt</p>
+</div>
+<span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Terlambat</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs text-gray-400">Total Tagihan</p>
+<p class="text-sm font-bold text-[#111418] dark:text-white">Rp 4.200.000</p>
+</div>
+<button class="text-primary text-xs font-bold px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20">Bayar</button>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-50 dark:border-gray-700 shadow-sm opacity-70">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-bold text-sm text-[#111418] dark:text-white">Sewa Kantor Bulan Okt</h4>
+<p class="text-[10px] text-gray-500">INV-2023-0065 • Lunas 01 Okt</p>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Lunas</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs text-gray-400">Total Tagihan</p>
+<p class="text-sm font-bold text-[#111418] dark:text-white">Rp 25.000.000</p>
+</div>
+<span class="text-gray-400 text-xs italic">Sudah Dibayar</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-50 dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-bold text-sm text-[#111418] dark:text-white">Pajak PPh Pasal 21</h4>
+<p class="text-[10px] text-gray-500">TAX-2023-10 • Jatuh tempo 10 Nov</p>
+</div>
+<span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Berjalan</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs text-gray-400">Total Tagihan</p>
+<p class="text-sm font-bold text-[#111418] dark:text-white">Rp 8.750.000</p>
+</div>
+<button class="text-primary text-xs font-bold px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20">Bayar</button>
+</div>
+</div>
+</div>
+</div>
+<button class="fixed bottom-24 right-6 size-14 rounded-full bg-primary text-white shadow-xl flex items-center justify-center z-50 hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined !text-3xl">add</span>
+</button>
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 px-4 pt-3 pb-6 flex justify-between items-center z-50">
+<button class="flex-1 flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[9px] font-medium">Home</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="text-[9px] font-medium">HPP-BEP</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[9px] font-bold">Hutang Piutang</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[9px] font-medium">Transaksi</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[9px] font-medium">Laporan</span>
+</button>
+</div>
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full z-50"></div>
+</div>
+
+</body></html>

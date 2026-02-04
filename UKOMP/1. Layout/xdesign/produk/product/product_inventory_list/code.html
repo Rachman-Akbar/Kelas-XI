@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modern Product Inventory - Compact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "xl": "12px",
+                        "2xl": "16px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="sticky top-0 z-30 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center px-5 py-4 justify-between">
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Produk</h1>
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center w-9 h-9 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<button class="flex items-center justify-center w-9 h-9 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="flex items-center justify-center w-9 h-9 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+</div>
+</div>
+<div class="px-5 pb-4">
+<div class="relative flex items-center w-full">
+<div class="absolute left-3.5 text-slate-400 pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-10 pl-10 pr-4 rounded-xl border-none bg-slate-100 dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-500 transition-all" placeholder="Cari nama produk atau SKU..."/>
+</div>
+</div>
+</div>
+<main class="p-4 flex flex-col gap-3 pb-36">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-3 flex gap-3">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img alt="Valve" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz4GlYqZktHmRXoH3r69pjBJ0EzGs1FN2zNeYN33CLCSiBtQynL8iDzbxqH4tdg_2zB38onaC8pCcAvZHZWQDF9mVyKCIhsxsv_eXY9fTyT3pw9pf1SmaBRmeCerom-F4AayxDMXzQL_8Qkm_uX6XqFI2-d0JEYDA1oC5nVJtX4FplbJoR895HLliNGYo298rw71nTlkzAJT-8dOtGDn9HtlfCxZHa3wBpEgCg6SR3JMEVzUCoB3nE3Ib4UL68ifKiL7PJYDevcOU"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex justify-between items-start gap-2">
+<div class="min-w-0">
+<h3 class="text-[14px] font-bold text-slate-900 dark:text-white truncate">Industrial Valve V1</h3>
+<p class="text-[11px] text-slate-500 font-medium">IV-9920 • Parts</p>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="status-dot bg-emerald-500"></span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">In Stock</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-1">
+<div>
+<p class="text-[10px] text-slate-400 font-medium uppercase leading-none mb-0.5">Price</p>
+<span class="text-[14px] font-bold text-slate-900 dark:text-white">Rp 124.500</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded-md border border-slate-100 dark:border-slate-700 flex flex-col items-center">
+<span class="text-[8px] font-bold text-slate-400 uppercase leading-none mb-0.5">Stock</span>
+<span class="text-[13px] font-black text-primary">45 <span class="text-[10px] font-normal text-slate-400">Unit</span></span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-slate-50 dark:border-slate-800">
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-r border-slate-50 dark:border-slate-800">
+<span class="material-symbols-outlined text-[18px] text-primary">add_circle</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Restock</span>
+</button>
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-r border-slate-50 dark:border-slate-800">
+<span class="material-symbols-outlined text-[18px] text-slate-400">history</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Riwayat</span>
+</button>
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">info</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Detail</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-3 flex gap-3">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img alt="Pump" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPr_lZt9Rd0xH-8jxgMgT6qfmxq3qMOtpCYp29JJ0pbBXsaBJ9JEVaPMsu0iUDV2raD0Rzc3MPzeI4nfRLNK9s1-BjMYNK6_DhcLny9orBvgZ8J13mFK9_09p__tLjgIddQGr5zmiAHXsaYNz335p78SoEBVntsWGWHh9d462sDeYKSzFX_kPBGKR3aMehH-A3v8fwBdO6q09uThXduTlAtb8c6Xjf_85U683U2UxuU6CSKf3mcs1lxeLaXQ2sHHyGjGqENN2eD6U"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex justify-between items-start gap-2">
+<div class="min-w-0">
+<h3 class="text-[14px] font-bold text-slate-900 dark:text-white truncate">Hydraulic Pump P2</h3>
+<p class="text-[11px] text-slate-500 font-medium">HP-4410 • Machinery</p>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="status-dot bg-amber-500"></span>
+<span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-tight">Low Stock</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-1">
+<div>
+<p class="text-[10px] text-slate-400 font-medium uppercase leading-none mb-0.5">Price</p>
+<span class="text-[14px] font-bold text-slate-900 dark:text-white">Rp 850.000</span>
+</div>
+<div class="bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded-md border border-amber-100 dark:border-amber-800/50 flex flex-col items-center">
+<span class="text-[8px] font-bold text-amber-600 dark:text-amber-400 uppercase leading-none mb-0.5">Stock</span>
+<span class="text-[13px] font-black text-amber-600 dark:text-amber-400">5 <span class="text-[10px] font-normal opacity-70">Unit</span></span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-slate-50 dark:border-slate-800">
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-r border-slate-50 dark:border-slate-800">
+<span class="material-symbols-outlined text-[18px] text-primary">add_circle</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Restock</span>
+</button>
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-r border-slate-50 dark:border-slate-800">
+<span class="material-symbols-outlined text-[18px] text-slate-400">history</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Riwayat</span>
+</button>
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">info</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Detail</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-3 flex gap-3">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img alt="Sensor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBanSgGVGhx3xNG2YACsz5Gao8waD6Dz0DKCvns0Z0L6b7Z7OwDo0DqavYCFWogNQhaW3iC28FNqB1c-_yk_irEn5tP7Cv5cTotzTJDeaZMV9U3qcdzhpj-3zMFJ68EQLt694Nl39c408L3pYL3DE-TGTUZgJUd0YDmskALGNh4IboZqsu_KDKnwSPO-Fl0cg03quPSfhVjVxL4R5BVDI8Inf7FmCg8owbSaCBYvn1rpqcPA5qd_zrEY_KCCqFpTSvUkPATp5EZhGM"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex justify-between items-start gap-2">
+<div class="min-w-0">
+<h3 class="text-[14px] font-bold text-slate-900 dark:text-white truncate">Sensor Module S4</h3>
+<p class="text-[11px] text-slate-500 font-medium">SM-1102 • Electronics</p>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="status-dot bg-rose-500"></span>
+<span class="text-[10px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-tight">Out of Stock</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-1">
+<div>
+<p class="text-[10px] text-slate-400 font-medium uppercase leading-none mb-0.5">Price</p>
+<span class="text-[14px] font-bold text-slate-900 dark:text-white">Rp 45.990</span>
+</div>
+<div class="bg-rose-50 dark:bg-rose-900/20 px-2 py-1 rounded-md border border-rose-100 dark:border-rose-800/50 flex flex-col items-center">
+<span class="text-[8px] font-bold text-rose-600 dark:text-rose-400 uppercase leading-none mb-0.5">Stock</span>
+<span class="text-[13px] font-black text-rose-600 dark:text-rose-400">0 <span class="text-[10px] font-normal opacity-70">Unit</span></span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-slate-50 dark:border-slate-800">
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-r border-slate-50 dark:border-slate-800">
+<span class="material-symbols-outlined text-[18px] text-primary">add_circle</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Restock</span>
+</button>
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-r border-slate-50 dark:border-slate-800">
+<span class="material-symbols-outlined text-[18px] text-slate-400">history</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Riwayat</span>
+</button>
+<button class="flex-1 flex items-center justify-center py-2 gap-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-slate-400">info</span>
+<span class="text-[11px] font-semibold text-slate-600 dark:text-slate-300">Detail</span>
+</button>
+</div>
+</div>
+</main>
+<button class="fixed bottom-24 right-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-2 pt-2.5 pb-7 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 flex-1 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 flex-1 text-slate-400">
+<span class="material-symbols-outlined">category</span>
+<span class="text-[10px] font-medium">Bahan Baku</span>
+</button>
+<button class="flex flex-col items-center gap-1 flex-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">inventory_2</span>
+<span class="text-[10px] font-bold">Produk</span>
+</button>
+<button class="flex flex-col items-center gap-1 flex-1 text-slate-400">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="text-[10px] font-medium">Produksi</span>
+</button>
+</nav>
+
+</body></html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HPP &amp; BEP Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .trend-chart-bar {
+            transition: height 0.3s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display">
+<div class="relative flex h-auto min-h-screen w-full max-w-[430px] mx-auto flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
+<button class="flex size-10 items-center justify-start text-[#111418] dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</button>
+<h1 class="text-base font-bold flex-1 text-center">Analisis HPP &amp; BEP</h1>
+<button class="flex size-10 items-center justify-end text-[#111418] dark:text-white">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<div class="flex flex-col flex-1 pb-24">
+<div class="p-4">
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold text-gray-700 dark:text-gray-300">Tren Margin &amp; BEP</h3>
+<span class="text-[10px] font-medium text-primary bg-primary/10 px-2 py-1 rounded">6 Bulan Terakhir</span>
+</div>
+<div class="h-32 flex items-end justify-between gap-2 px-2">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-12 relative group">
+<div class="absolute bottom-0 w-full bg-primary h-8 rounded-t-sm"></div>
+</div>
+<span class="text-[8px] text-gray-400">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-16 relative">
+<div class="absolute bottom-0 w-full bg-primary h-10 rounded-t-sm"></div>
+</div>
+<span class="text-[8px] text-gray-400">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-20 relative">
+<div class="absolute bottom-0 w-full bg-primary h-14 rounded-t-sm"></div>
+</div>
+<span class="text-[8px] text-gray-400">Mar</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-14 relative">
+<div class="absolute bottom-0 w-full bg-primary h-9 rounded-t-sm"></div>
+</div>
+<span class="text-[8px] text-gray-400">Apr</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-24 relative">
+<div class="absolute bottom-0 w-full bg-primary h-18 rounded-t-sm"></div>
+</div>
+<span class="text-[8px] text-gray-400">Mei</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-18 relative">
+<div class="absolute bottom-0 w-full bg-primary h-12 rounded-t-sm"></div>
+</div>
+<span class="text-[8px] text-gray-400">Jun</span>
+</div>
+</div>
+<div class="flex justify-center gap-4 mt-4">
+<div class="flex items-center gap-1">
+<span class="size-2 rounded-full bg-primary"></span>
+<span class="text-[10px] text-gray-500">HPP</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="size-2 rounded-full bg-primary/30"></span>
+<span class="text-[10px] text-gray-500">BEP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-3 px-4">
+<div class="flex-1 bg-primary p-4 rounded-xl shadow-md text-white">
+<p class="text-[10px] font-medium opacity-80 uppercase tracking-wider">Total HPP</p>
+<p class="text-lg font-bold">Rp 742.5M</p>
+<div class="mt-2 flex items-center gap-1 text-[10px]">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+<span>-4.2% bln lalu</span>
+</div>
+</div>
+<div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<p class="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Rata-rata Margin</p>
+<p class="text-lg font-bold text-[#111418] dark:text-white">32.4%</p>
+<div class="mt-2 flex items-center gap-1 text-[10px] text-green-600 font-bold">
+<span class="material-symbols-outlined text-xs font-bold">trending_up</span>
+<span>+1.5% bln lalu</span>
+</div>
+</div>
+</div>
+<div class="mt-6 px-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-base font-bold">Analisis per Produk</h3>
+<button class="text-xs text-primary font-semibold">Unduh PDF</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-sm">Produk Kategori A - Premium</h4>
+<p class="text-[10px] text-gray-500">Update: 2 jam yang lalu</p>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Sehat</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">HPP</span>
+<span class="text-xs font-bold">Rp 12.500</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">BEP Unit</span>
+<span class="text-xs font-bold">450 Unit</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">Margin %</span>
+<span class="text-xs font-bold text-primary">45%</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-sm">Produk Kategori B - Standard</h4>
+<p class="text-[10px] text-gray-500">Update: 1 hari yang lalu</p>
+</div>
+<span class="bg-orange-100 text-orange-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Perhatian</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">HPP</span>
+<span class="text-xs font-bold">Rp 8.200</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">BEP Unit</span>
+<span class="text-xs font-bold">1.200 Unit</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">Margin %</span>
+<span class="text-xs font-bold text-orange-600">18%</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h4 class="font-bold text-sm">Produk Kategori C - Entry</h4>
+<p class="text-[10px] text-gray-500">Update: 3 hari yang lalu</p>
+</div>
+<span class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold">Sehat</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">HPP</span>
+<span class="text-xs font-bold">Rp 4.500</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">BEP Unit</span>
+<span class="text-xs font-bold">3.000 Unit</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] text-gray-400 uppercase">Margin %</span>
+<span class="text-xs font-bold text-primary">28%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 px-2 py-3 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[9px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined !fill-1">query_stats</span>
+<span class="text-[9px] font-bold">HPP-BEP</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[9px] font-medium">Hutang</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[9px] font-medium">Transaksi</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[9px] font-medium">Laporan</span>
+</button>
+</div>
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full z-50"></div>
+</div>
+
+</body></html>

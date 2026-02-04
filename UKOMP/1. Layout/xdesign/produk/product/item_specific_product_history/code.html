@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Specific Product History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen pb-20">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center px-4 py-3 gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-tight flex-1">Riwayat: Roti Tawar</h1>
+</div>
+</nav>
+<main class="max-w-md mx-auto">
+<!-- Stock Summary Card -->
+<div class="p-4">
+<div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 p-4 rounded-xl shadow-sm flex items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-[#637588] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Status Terkini</p>
+<p class="text-[#111418] dark:text-white text-2xl font-bold leading-tight">150 <span class="text-sm font-normal text-gray-500">Pcs</span></p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Diperbarui: Hari ini, 10:45</p>
+</div>
+<div class="w-24 h-24 bg-primary/10 rounded-lg flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up shot of sliced white bread" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgji1LXIPc243E8fenlkrQYUGdCv00Hb0_kgy5Xb8GnD-tH3VVy09sAvfYvoC16wbEYbjtMmySkbO0kpIfFnuRTT1wIFo0klOvmgpDZRgdfeyDNmOJH6uDGBnSXk_RpwywlpUilqFKjaImJw9_DAxbOrpE_QS94EmBy_U1KiXfWavNJvq5kPnN7nK9i2jIkc1kHFw_OwphfAimrXPD5AI6ehd7Wf4EIsHmBt3rqBOJHtUfNt9SgO7DhFW5KWUNjwTInxCLscrmCZ4");'></div>
+</div>
+</div>
+</div>
+<!-- Filter Segmented Control -->
+<div class="px-4 py-2">
+<div class="flex h-11 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-gray-400 text-sm font-semibold transition-all">
+<span>Semua</span>
+<input checked="" class="hidden" name="history-filter" type="radio" value="all"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-gray-400 text-sm font-semibold transition-all">
+<span>Masuk</span>
+<input class="hidden" name="history-filter" type="radio" value="in"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-gray-400 text-sm font-semibold transition-all">
+<span>Keluar</span>
+<input class="hidden" name="history-filter" type="radio" value="out"/>
+</label>
+</div>
+</div>
+<!-- History List Header -->
+<div class="px-4 pt-6 pb-2">
+<div class="flex justify-between items-center border-b border-gray-100 dark:border-gray-800 pb-2">
+<h3 class="text-[#111418] dark:text-white text-sm font-bold uppercase tracking-wider">Detail Transaksi</h3>
+<span class="text-xs text-gray-400">Oktober 2023</span>
+</div>
+</div>
+<!-- Transaction Items -->
+<div class="flex flex-col">
+<!-- Item 1: Produksi -->
+<div class="flex gap-4 bg-white dark:bg-background-dark px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<div class="flex items-start gap-4">
+<div class="text-primary flex items-center justify-center rounded-xl bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-semibold">Produksi</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Saldo Akhir: 150 Pcs</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">12 Okt | 08:00</p>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<p class="text-emerald-600 dark:text-emerald-400 text-base font-bold">+50</p>
+<span class="text-[10px] text-gray-400 font-medium px-1.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20">MASUK</span>
+</div>
+</div>
+<!-- Item 2: Penjualan -->
+<div class="flex gap-4 bg-white dark:bg-background-dark px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<div class="flex items-start gap-4">
+<div class="text-orange-500 flex items-center justify-center rounded-xl bg-orange-100 dark:bg-orange-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-semibold">Penjualan Cabang A</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Saldo Akhir: 100 Pcs</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">11 Okt | 17:30</p>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<p class="text-red-500 dark:text-red-400 text-base font-bold">-20</p>
+<span class="text-[10px] text-gray-400 font-medium px-1.5 py-0.5 rounded-full bg-red-50 dark:bg-red-900/20">KELUAR</span>
+</div>
+</div>
+<!-- Item 3: Retur -->
+<div class="flex gap-4 bg-white dark:bg-background-dark px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<div class="flex items-start gap-4">
+<div class="text-primary flex items-center justify-center rounded-xl bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">assignment_return</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-semibold">Retur Produksi</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Saldo Akhir: 120 Pcs</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">11 Okt | 09:15</p>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<p class="text-emerald-600 dark:text-emerald-400 text-base font-bold">+10</p>
+<span class="text-[10px] text-gray-400 font-medium px-1.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20">MASUK</span>
+</div>
+</div>
+<!-- Item 4: Penjualan -->
+<div class="flex gap-4 bg-white dark:bg-background-dark px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<div class="flex items-start gap-4">
+<div class="text-orange-500 flex items-center justify-center rounded-xl bg-orange-100 dark:bg-orange-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-semibold">Pengiriman Grosir</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Saldo Akhir: 110 Pcs</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">10 Okt | 14:00</p>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<p class="text-red-500 dark:text-red-400 text-base font-bold">-40</p>
+<span class="text-[10px] text-gray-400 font-medium px-1.5 py-0.5 rounded-full bg-red-50 dark:bg-red-900/20">KELUAR</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 safe-area-bottom">
+<div class="max-w-md mx-auto flex justify-around items-center py-2 px-4">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">inventory_2</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Bahan Baku</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-primary transition-colors">bakery_dining</span>
+<span class="text-[10px] font-medium text-primary">Produk</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">factory</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Produksi</span>
+</button>
+</div>
+</footer>
+</body></html>

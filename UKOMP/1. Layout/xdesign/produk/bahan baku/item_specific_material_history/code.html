@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Item Specific Material History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full max-w-[430px] mx-auto flex-col bg-white dark:bg-background-dark overflow-x-hidden shadow-xl">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-10 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100 dark:border-gray-800">
+<div class="text-primary flex size-10 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-[28px]">chevron_left</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Riwayat: Tepung Terigu</h2>
+</div>
+<!-- Material Summary Card -->
+<div class="p-4">
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-background-light dark:bg-gray-800 p-4 border border-gray-100 dark:border-gray-700">
+<div class="flex flex-col gap-1 flex-[2_2_0px]">
+<p class="text-primary text-xs font-bold uppercase tracking-wider">Status Stok</p>
+<p class="text-[#111418] dark:text-white text-2xl font-bold leading-tight">150 kg</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal leading-normal">Pembaruan terakhir: 2 jam yang lalu</p>
+</div>
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-lg flex-1 shadow-sm" data-alt="Close up of white wheat flour texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADX1TQowD-Xm8a8IToUf2euVCw-VEPlDBc5BPWlW-OP4sNWQHFleuXzofyG3wpvY8849-Bos-hNnlOYxC0AM_brGRGJLtULW8GtU_Y8MFKEuCqQ1P1rBFUrLIKnHE8GxdwExiv1iYy6ORMiqKJooz7gqQ3eB4yn-VFu6MPyl6IfJAgWR2nU5oleDCwykd21qN2DmxI8Zqt_u-3v1vyDFCVvbOD64oiLp7j8CdslP3Y9up7Lutk0mhhcED32np7RjZhpLZPl8fSV48");'>
+</div>
+</div>
+</div>
+<!-- SegmentedButtons (Filter) -->
+<div class="flex px-4 py-3">
+<div class="flex h-11 flex-1 items-center justify-center rounded-xl bg-[#f0f2f4] dark:bg-gray-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-[#637588] dark:text-gray-400 text-sm font-semibold leading-normal transition-all">
+<span class="truncate">Semua</span>
+<input checked="" class="invisible w-0" name="filter" type="radio" value="Semua"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-[#637588] dark:text-gray-400 text-sm font-semibold leading-normal transition-all">
+<span class="truncate">Masuk</span>
+<input class="invisible w-0" name="filter" type="radio" value="Masuk"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-[#637588] dark:text-gray-400 text-sm font-semibold leading-normal transition-all">
+<span class="truncate">Keluar</span>
+<input class="invisible w-0" name="filter" type="radio" value="Keluar"/>
+</label>
+</div>
+</div>
+<!-- SectionHeader -->
+<div class="flex items-center justify-between px-4 pb-2 pt-4">
+<h3 class="text-[#111418] dark:text-white text-base font-bold leading-tight tracking-tight">Riwayat Transaksi</h3>
+<span class="text-primary text-xs font-semibold cursor-pointer">Lihat Laporan</span>
+</div>
+<!-- Transaction List -->
+<div class="flex flex-col mb-20">
+<!-- Entry 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[72px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<div class="text-[#e63946] flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">remove_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal line-clamp-1">Produksi</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal leading-normal line-clamp-2">24 Okt 2023, 10:00</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal">-5 kg</p>
+<p class="text-[10px] text-[#637588] dark:text-gray-400 uppercase font-medium">Batch #A21</p>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[72px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<div class="text-[#2a9d8f] flex items-center justify-center rounded-xl bg-green-50 dark:bg-green-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal line-clamp-1">Restock</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal leading-normal line-clamp-2">23 Okt 2023, 08:30</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#2a9d8f] text-base font-bold leading-normal">+100 kg</p>
+<p class="text-[10px] text-[#637588] dark:text-gray-400 uppercase font-medium">Vendor: Sari Roti</p>
+</div>
+</div>
+<!-- Entry 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[72px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<div class="text-[#e63946] flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">remove_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal line-clamp-1">Produksi</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal leading-normal line-clamp-2">22 Okt 2023, 14:15</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal">-12 kg</p>
+<p class="text-[10px] text-[#637588] dark:text-gray-400 uppercase font-medium">Batch #A20</p>
+</div>
+</div>
+<!-- Entry 4 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[72px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<div class="text-[#e63946] flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/20 shrink-0 size-12">
+<span class="material-symbols-outlined">remove_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal line-clamp-1">Produksi</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal leading-normal line-clamp-2">21 Okt 2023, 16:00</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#111418] dark:text-white text-base font-bold leading-normal">-8 kg</p>
+<p class="text-[10px] text-[#637588] dark:text-gray-400 uppercase font-medium">Batch #A19</p>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<div class="fixed bottom-0 w-full max-w-[430px] bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 px-6 py-2 flex justify-between items-center pb-8">
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px] fill-current">inventory_2</span>
+<span class="text-[10px] font-medium">Bahan Baku</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="text-[10px] font-medium">Produk</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined text-[24px]">settings_suggest</span>
+<span class="text-[10px] font-medium">Produksi</span>
+</div>
+</div>
+</div>
+
+```</body></html>

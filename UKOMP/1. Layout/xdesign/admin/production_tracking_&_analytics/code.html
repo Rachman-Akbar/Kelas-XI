@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Production Tracking &amp; Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13eca4",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-[#23483c] bg-background-light dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined">factory</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">MSME Production</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-400 dark:text-[#92c9b7] flex border-none bg-slate-100 dark:bg-[#23483c] items-center justify-center pl-4 rounded-l-lg" data-icon="MagnifyingGlass">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-[#23483c] focus:border-none h-full placeholder:text-slate-500 dark:placeholder:text-[#92c9b7] px-4 rounded-l-none pl-2 text-base font-normal leading-normal" placeholder="Search orders..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-slate-600 dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary" href="#">Production</a>
+<a class="text-slate-600 dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Inventory</a>
+<a class="text-slate-600 dark:text-white text-sm font-medium hover:text-primary transition-colors" href="#">Reports</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all">
+<span class="truncate">New Production Order</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-slate-100 dark:bg-[#23483c] text-slate-900 dark:text-white gap-2 text-sm font-bold min-w-0 px-2.5">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjjQzQxSjmDe9jEVBtx6RaJNI3MA3lqebbro7GXAdO-rbfMCdRG003s8A-o6GNePOa9oGoZtSZUhgVMsM_MwMWMHfYCb8xBlyFTM54c-EfCNLc4TJH3NjBaieFBpA8ZUjqyjxMJ7Ouh6ZgqpaHHXaKZO_mBqVLY9HjJKrUqdh6mIs_4kFk3H8kQoYGYr_w0uKE2-FLBQNrCVF3tMFMME0eXRl9y5eEelSJzb3Gngoidhb77GFFRdfgyTgnE01rqmrqYDT0mKLN_L-R");'></div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-4 lg:px-10 py-8 space-y-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Production Analytics</h1>
+<p class="text-slate-500 dark:text-[#92c9b7]">Performance and operational metrics for the current cycle</p>
+</div>
+<div class="flex gap-3">
+<div class="flex bg-white dark:bg-[#23483c] rounded-lg p-1 border border-slate-200 dark:border-[#326755]">
+<button class="px-3 py-1.5 text-xs font-bold rounded bg-slate-100 dark:bg-[#326755] text-slate-900 dark:text-white">7D</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded text-slate-500 dark:text-[#92c9b7] hover:bg-slate-50 dark:hover:bg-[#326755]/50">30D</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded text-slate-500 dark:text-[#92c9b7] hover:bg-slate-50 dark:hover:bg-[#326755]/50">YTD</button>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-background-dark rounded-lg text-sm font-bold shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    Export Data
+                </button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-slate-200 dark:border-[#326755] bg-white dark:bg-[#11221c]/50">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-white text-base font-medium leading-normal">Total Orders</p>
+<span class="material-symbols-outlined text-slate-400">inventory_2</span>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-3xl font-bold leading-tight">124</p>
+<p class="text-[#0bda49] text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +12.5%
+                </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-slate-200 dark:border-[#326755] bg-white dark:bg-[#11221c]/50">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-white text-base font-medium leading-normal">Efficiency Rate</p>
+<span class="material-symbols-outlined text-slate-400">bolt</span>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-3xl font-bold leading-tight">94.2%</p>
+<p class="text-[#fa5838] text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span> -2.4%
+                </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-slate-200 dark:border-[#326755] bg-white dark:bg-[#11221c]/50">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-white text-base font-medium leading-normal">Material Waste</p>
+<span class="material-symbols-outlined text-slate-400">recycling</span>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-3xl font-bold leading-tight">2.5%</p>
+<p class="text-[#0bda49] text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span> -0.5%
+                </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-slate-200 dark:border-[#326755] bg-white dark:bg-[#11221c]/50">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-white text-base font-medium leading-normal">Active Bottlenecks</p>
+<span class="material-symbols-outlined text-slate-400">error</span>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-3xl font-bold leading-tight">3</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-sm font-medium leading-normal">Same as yesterday</p>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2 rounded-xl border border-slate-200 dark:border-[#326755] p-6 bg-white dark:bg-[#11221c]/50">
+<p class="text-slate-500 dark:text-white text-base font-medium leading-normal">Production Efficiency over Time</p>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">94.2%</p>
+<p class="text-[#0bda49] text-sm font-bold">+2.1%</p>
+</div>
+<div class="flex min-h-[220px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="160" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_chart)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#13eca4" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#13eca4" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#13eca4" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Mon</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Tue</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Wed</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Thu</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Fri</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Sat</p>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Sun</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-slate-200 dark:border-[#326755] p-6 bg-white dark:bg-[#11221c]/50">
+<p class="text-slate-500 dark:text-white text-base font-medium leading-normal">Waste by Material</p>
+<div class="flex items-baseline gap-2">
+<p class="text-slate-900 dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">150kg</p>
+<p class="text-[#fa5838] text-sm font-bold">-5.2%</p>
+</div>
+<div class="grid min-h-[220px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 pt-4">
+<div class="group relative w-full h-full flex flex-col justify-end">
+<div class="bg-primary/20 dark:bg-[#23483c] border-t-2 border-primary rounded-t-sm w-full transition-all duration-300 group-hover:bg-primary/40" style="height: 50%;"></div>
+</div>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Steel</p>
+<div class="group relative w-full h-full flex flex-col justify-end">
+<div class="bg-primary/20 dark:bg-[#23483c] border-t-2 border-primary rounded-t-sm w-full transition-all duration-300 group-hover:bg-primary/40" style="height: 30%;"></div>
+</div>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Rubber</p>
+<div class="group relative w-full h-full flex flex-col justify-end">
+<div class="bg-primary/20 dark:bg-[#23483c] border-t-2 border-primary rounded-t-sm w-full transition-all duration-300 group-hover:bg-primary/40" style="height: 80%;"></div>
+</div>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Plastic</p>
+<div class="group relative w-full h-full flex flex-col justify-end">
+<div class="bg-primary/20 dark:bg-[#23483c] border-t-2 border-primary rounded-t-sm w-full transition-all duration-300 group-hover:bg-primary/40" style="height: 15%;"></div>
+</div>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Wood</p>
+<div class="group relative w-full h-full flex flex-col justify-end">
+<div class="bg-primary/20 dark:bg-[#23483c] border-t-2 border-primary rounded-t-sm w-full transition-all duration-300 group-hover:bg-primary/40" style="height: 65%;"></div>
+</div>
+<p class="text-slate-400 dark:text-[#92c9b7] text-[11px] font-bold uppercase tracking-wider">Glass</p>
+</div>
+</div>
+</div>
+<!-- Production Tracking Table Container -->
+<div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-[#326755] bg-white dark:bg-[#11221c]/50 overflow-hidden shadow-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 p-6 border-b border-slate-100 dark:border-[#326755]">
+<div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Production Tracking</h2>
+<p class="text-slate-500 dark:text-[#92c9b7] text-sm mt-1">Manage active manufacturing orders and status updates</p>
+</div>
+<div class="flex gap-2 w-full md:w-auto">
+<button class="p-2 bg-slate-50 dark:bg-[#23483c] border border-slate-200 dark:border-[#326755] text-slate-600 dark:text-white rounded-lg hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+<button class="p-2 bg-slate-50 dark:bg-[#23483c] border border-slate-200 dark:border-[#326755] text-slate-600 dark:text-white rounded-lg hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+<div class="h-10 w-px bg-slate-200 dark:bg-[#326755] mx-1"></div>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-primary text-background-dark font-bold rounded-lg text-sm hover:bg-primary/90">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        New Order
+                    </button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 dark:bg-[#23483c]/30 text-slate-500 dark:text-[#92c9b7] text-xs font-bold uppercase tracking-wider">
+<tr>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Product</th>
+<th class="px-6 py-4 text-center">Quantity</th>
+<th class="px-6 py-4">Materials Used</th>
+<th class="px-6 py-4">Status &amp; Progress</th>
+<th class="px-6 py-4 text-right">Cost</th>
+<th class="px-6 py-4 text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-[#326755]">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-[#23483c]/20 transition-colors group">
+<td class="px-6 py-4 text-slate-900 dark:text-white text-sm font-medium whitespace-nowrap">2023-11-20</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-[#23483c] flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">precision_manufacturing</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-bold">Industrial Gear X1</p>
+<p class="text-slate-500 dark:text-[#92c9b7] text-xs font-mono">SKU-24901</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-slate-900 dark:text-white text-sm font-bold">500 units</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">STEEL</span>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">LUBE</span>
+</div>
+</td>
+<td class="px-6 py-4 min-w-[180px]">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center text-xs">
+<span class="flex items-center gap-1.5 text-[#0bda49] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0bda49]"></span> Complete
+                                        </span>
+<span class="text-slate-400 dark:text-[#92c9b7]">100%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-[#23483c] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#0bda49] h-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-slate-900 dark:text-white text-sm font-bold">$12,450.00</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-[#23483c]/20 transition-colors group">
+<td class="px-6 py-4 text-slate-900 dark:text-white text-sm font-medium whitespace-nowrap">2023-11-21</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-[#23483c] flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">widgets</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-bold">Electronic Module B</p>
+<p class="text-slate-500 dark:text-[#92c9b7] text-xs font-mono">SKU-88210</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-slate-900 dark:text-white text-sm font-bold">1,200 units</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">COPPER</span>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">EPOXY</span>
+</div>
+</td>
+<td class="px-6 py-4 min-w-[180px]">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center text-xs">
+<span class="flex items-center gap-1.5 text-primary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> QC Phase
+                                        </span>
+<span class="text-slate-400 dark:text-[#92c9b7]">85%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-[#23483c] h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 85%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-slate-900 dark:text-white text-sm font-bold">$28,900.00</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="text-primary bg-primary/10 hover:bg-primary/20 px-3 py-1.5 rounded text-xs font-bold transition-all">Update Status</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-[#23483c]/20 transition-colors group">
+<td class="px-6 py-4 text-slate-900 dark:text-white text-sm font-medium whitespace-nowrap">2023-11-22</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-[#23483c] flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">shelves</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-bold">Storage Bracket V2</p>
+<p class="text-slate-500 dark:text-[#92c9b7] text-xs font-mono">SKU-11204</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-slate-900 dark:text-white text-sm font-bold">2,500 units</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">STEEL</span>
+</div>
+</td>
+<td class="px-6 py-4 min-w-[180px]">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center text-xs">
+<span class="flex items-center gap-1.5 text-blue-400 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> In Progress
+                                        </span>
+<span class="text-slate-400 dark:text-[#92c9b7]">42%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-[#23483c] h-1.5 rounded-full overflow-hidden">
+<div class="bg-blue-400 h-full" style="width: 42%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-slate-900 dark:text-white text-sm font-bold">$15,200.00</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="text-primary bg-primary/10 hover:bg-primary/20 px-3 py-1.5 rounded text-xs font-bold transition-all">Update Status</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-[#23483c]/20 transition-colors group">
+<td class="px-6 py-4 text-slate-900 dark:text-white text-sm font-medium whitespace-nowrap">2023-11-23</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-[#23483c] flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">settings_input_component</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-sm font-bold">Connector Hub 400</p>
+<p class="text-slate-500 dark:text-[#92c9b7] text-xs font-mono">SKU-77341</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-center text-slate-900 dark:text-white text-sm font-bold">300 units</td>
+<td class="px-6 py-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">ALUMINUM</span>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-[#23483c] text-slate-600 dark:text-[#92c9b7] text-[10px] font-bold">PLASTIC</span>
+</div>
+</td>
+<td class="px-6 py-4 min-w-[180px]">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center text-xs">
+<span class="flex items-center gap-1.5 text-slate-400 dark:text-slate-500 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-500"></span> Planned
+                                        </span>
+<span class="text-slate-400 dark:text-[#92c9b7]">0%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-[#23483c] h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-400 h-full" style="width: 0%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-slate-900 dark:text-white text-sm font-bold">$9,100.00</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<button class="text-primary bg-primary/10 hover:bg-primary/20 px-3 py-1.5 rounded text-xs font-bold transition-all">Start Order</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer/Pagination -->
+<div class="p-4 bg-slate-50/50 dark:bg-[#23483c]/10 border-t border-slate-100 dark:border-[#326755] flex items-center justify-between">
+<p class="text-slate-500 dark:text-[#92c9b7] text-xs font-medium">Showing 4 of 124 production orders</p>
+<div class="flex gap-2">
+<button class="p-1.5 rounded border border-slate-200 dark:border-[#326755] text-slate-400 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="p-1.5 rounded border border-slate-200 dark:border-[#326755] text-slate-600 dark:text-white hover:bg-slate-50 dark:hover:bg-[#326755]">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Credit -->
+<footer class="max-w-[1440px] mx-auto px-10 py-8 border-t border-slate-200 dark:border-[#23483c] flex flex-col md:flex-row justify-between items-center text-slate-500 dark:text-[#92c9b7] text-xs gap-4">
+<div class="flex items-center gap-4">
+<span>© 2023 ProductionFlow MSME Admin</span>
+<div class="h-3 w-px bg-slate-200 dark:bg-[#326755]"></div>
+<a class="hover:text-primary" href="#">System Status</a>
+<a class="hover:text-primary" href="#">Documentation</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#0bda49]"></span>
+<span>All systems operational</span>
+</div>
+</footer>
+</body></html>

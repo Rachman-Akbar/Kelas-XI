@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Detailed View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white antialiased">
+<div class="sticky top-0 z-50 flex items-center bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800 p-4 justify-between">
+<div class="flex items-center gap-4">
+<div class="material-symbols-outlined cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 p-1 rounded-full text-xl leading-none">arrow_back_ios</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Product Details</h2>
+</div>
+<div class="flex items-center">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-[#111418] dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="max-w-md mx-auto pb-10">
+<div class="p-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl shadow-sm min-h-64 border border-gray-100 dark:border-gray-800" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjYwz5X6SBF_xD-UHSzJ-lyftndG3Oug0hPdyReircX887mQqG6lYSDWb6pHJn6uFJOmp6BfZBjsFyWf5h1lDkpOwUUvqs7_FKizsJ-nlfReCE4ypuaUrhVgyLSrOwa1oc9QLstzUonFJndWPZzI7Q_iiEnTo64pkeIL81MH0M9wjmHEJ9Uwp8fsdW_SFKCD8X-A5NZRe4SPxxjQBSozezU8l0YFRRRz5mUC0aGuHa85QCOnCDy1ODvkHvuv2eOb9sXmbNIyUsV3A");'>
+</div>
+</div>
+<div class="px-4 flex justify-between items-start">
+<h3 class="text-2xl font-bold leading-tight flex-1">Industrial Hydraulic Pump V3</h3>
+<span class="bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mt-1">Low Stock</span>
+</div>
+<div class="grid grid-cols-2 gap-3 p-4">
+<div class="flex flex-col gap-3 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
+<span class="material-symbols-outlined text-primary">barcode</span>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-base font-bold leading-tight">SKU-99281</h2>
+<p class="text-[#637588] text-xs font-medium uppercase tracking-wider">SKU</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
+<span class="material-symbols-outlined text-primary">category</span>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-base font-bold leading-tight">Hydraulics</h2>
+<p class="text-[#637588] text-xs font-medium uppercase tracking-wider">Category</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm border-l-4 border-l-amber-500">
+<span class="material-symbols-outlined text-amber-500">inventory_2</span>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-base font-bold leading-tight">12 units</h2>
+<p class="text-[#637588] text-xs font-medium uppercase tracking-wider">Stock Level</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
+<span class="material-symbols-outlined text-primary">sell</span>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-base font-bold leading-tight">$840.00</h2>
+<p class="text-[#637588] text-xs font-medium uppercase tracking-wider">Unit Price</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
+<span class="material-symbols-outlined text-primary">payments</span>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-base font-bold leading-tight">$420.00</h2>
+<p class="text-[#637588] text-xs font-medium uppercase tracking-wider">HPP (Cost)</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
+<span class="material-symbols-outlined text-green-500">trending_up</span>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-base font-bold leading-tight text-green-600 dark:text-green-400">50.0%</h2>
+<p class="text-[#637588] text-xs font-medium uppercase tracking-wider">Profit Margin</p>
+</div>
+</div>
+</div>
+<div class="px-4 py-2">
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-[#dce0e5] dark:border-gray-700 p-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold uppercase tracking-wider text-[#637588]">Sales Trend (30d)</h3>
+<div class="flex gap-2 bg-background-light dark:bg-gray-900 p-1 rounded-lg">
+<button class="text-[10px] px-2 py-1 bg-white dark:bg-gray-800 rounded-md shadow-sm font-bold">7D</button>
+<button class="text-[10px] px-2 py-1 text-gray-500 font-bold">30D</button>
+</div>
+</div>
+<div class="h-32 flex items-end justify-between gap-1">
+<div class="bg-primary/20 w-full h-[40%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[60%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[55%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[85%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[70%] rounded-t-sm"></div>
+<div class="bg-primary w-full h-[95%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[65%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-gray-400 font-medium">
+<span>Oct 01</span>
+<span>Oct 15</span>
+<span>Today</span>
+</div>
+</div>
+</div>
+<h3 class="text-sm font-bold uppercase tracking-wider text-[#637588] px-4 pt-4 pb-2">Recent Activity</h3>
+<div class="px-4 space-y-3">
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+<div class="bg-blue-100 dark:bg-blue-900/40 p-2 rounded-lg">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-sm">inventory</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Restocked 50 units</p>
+<p class="text-xs text-gray-500">Yesterday by John Doe</p>
+</div>
+<span class="text-[10px] text-gray-400 font-medium">24h ago</span>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 p-3 rounded-xl border border-gray-100 dark:border-gray-700 active:bg-gray-50 dark:active:bg-gray-700 cursor-pointer">
+<div class="bg-gray-100 dark:bg-gray-700 p-2 rounded-lg">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-sm">list</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Lihat Komposisi</p>
+<p class="text-xs text-gray-500 mt-0.5">12 Bahan Baku • Total HPP: Rp 45.000</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-lg">chevron_right</span>
+</div>
+</div>
+<div class="h-10"></div>
+</div>
+
+</body></html>
