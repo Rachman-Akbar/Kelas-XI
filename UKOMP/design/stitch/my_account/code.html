@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#707a6c",
+                    "inverse-primary": "#88d982",
+                    "on-primary-container": "#cbffc2",
+                    "on-tertiary-fixed": "#3f001c",
+                    "background": "#f8f9fa",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#a3f69c",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "secondary": "#5e5e5e",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d9dadb",
+                    "primary": "#0d631b",
+                    "surface-container-highest": "#e1e3e4",
+                    "outline-variant": "#bfcaba",
+                    "surface-variant": "#e1e3e4",
+                    "surface": "#f8f9fa",
+                    "on-surface-variant": "#40493d",
+                    "tertiary-container": "#b14b6f",
+                    "on-surface": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "on-primary-fixed": "#002204",
+                    "tertiary-fixed-dim": "#ffb1c7",
+                    "secondary-container": "#e3e2e2",
+                    "tertiary": "#923357",
+                    "on-tertiary-container": "#ffedf0",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed-dim": "#88d982",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed": "#ffd9e2",
+                    "surface-tint": "#1b6d24",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#2e7d32",
+                    "secondary-fixed": "#e3e2e2",
+                    "surface-container": "#edeeef",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#464747",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-tertiary-fixed-variant": "#7f2448",
+                    "on-secondary-container": "#646464",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="bg-[#f8f9fa]/80 backdrop-blur-3xl fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 w-full h-16">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#0d631b] hover:bg-zinc-100 transition-colors p-2 rounded-full active:scale-95 transition-transform duration-150">menu</button>
+<span class="text-xl font-bold text-[#0d631b]">Organic Market</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-[#0d631b] hover:bg-zinc-100 transition-colors p-2 rounded-full active:scale-95 transition-transform duration-150">search</button>
+</div>
+</header>
+<main class="pt-20 px-6 max-w-md mx-auto">
+<!-- Profile Header -->
+<section class="flex items-center gap-6 py-8">
+<div class="relative">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-lowest shadow-sm">
+<img alt="Jane Doe Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a young woman with a warm smile, natural lighting, soft outdoor greenery background, professional photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxcTPEMuMgievvbiBS_WgbYLcxrmtK3cCNgcoybb9A50G-c_JrbFGLHWkiXZzIFdsv_QJ_9oWioduV7G_KbpD6WI7lB0mWH09tSD02R38pNhZdSwLZw9-rzzY7gMDY_gWkldu2FryDI4KQVRQh3Ww759__qiHaba5oH_4nEuM0xc4MHwjdAklC45xNEuDcLLD_F1KYvNCLY7M-OXMmGoX6yiicdwfdnaz-ur5TSO0UjogUmlQKVhcZLz4N1xEEHhyluttdN8GpPess"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary p-1.5 rounded-full border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-bold text-on-surface tracking-tight">Jane Doe</h1>
+<div class="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full self-start">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="text-primary font-semibold text-[12px]">Member Level: Gold</span>
+</div>
+</div>
+</section>
+<!-- Transaction Section -->
+<section class="bg-surface-container-lowest rounded-lg p-6 shadow-[0px_8px_24px_rgba(25,28,29,0.06)] mb-8">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-lg font-bold text-on-surface">My Purchases</h2>
+<span class="text-primary text-sm font-medium">View History</span>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2 active:scale-95 transition-transform">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low rounded-2xl">
+<span class="material-symbols-outlined text-primary text-[28px]">payments</span>
+</div>
+<span class="text-[11px] font-medium text-secondary">To Pay</span>
+</div>
+<div class="flex flex-col items-center gap-2 active:scale-95 transition-transform">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low rounded-2xl">
+<span class="material-symbols-outlined text-primary text-[28px]">local_shipping</span>
+</div>
+<span class="text-[11px] font-medium text-secondary">To Ship</span>
+</div>
+<div class="flex flex-col items-center gap-2 active:scale-95 transition-transform">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low rounded-2xl">
+<span class="material-symbols-outlined text-primary text-[28px]">package_2</span>
+</div>
+<span class="text-[11px] font-medium text-secondary">To Receive</span>
+</div>
+<div class="flex flex-col items-center gap-2 active:scale-95 transition-transform">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-low rounded-2xl">
+<span class="material-symbols-outlined text-primary text-[28px]">rate_review</span>
+</div>
+<span class="text-[11px] font-medium text-secondary">Reviews</span>
+</div>
+</div>
+</section>
+<!-- Menu List -->
+<section class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0px_8px_24px_rgba(25,28,29,0.06)]">
+<div class="flex flex-col">
+<!-- My Wishlist -->
+<button class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">favorite</span>
+<span class="font-medium text-on-surface">My Wishlist</span>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-50">chevron_right</span>
+</button>
+<!-- My Selling -->
+<button class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">storefront</span>
+<span class="font-medium text-on-surface">My Selling</span>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-50">chevron_right</span>
+</button>
+<!-- Payment Methods -->
+<button class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<span class="font-medium text-on-surface">Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-50">chevron_right</span>
+</button>
+<!-- Address Book -->
+<button class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-medium text-on-surface">Address Book</span>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-50">chevron_right</span>
+</button>
+<!-- Help Center -->
+<button class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">help</span>
+<span class="font-medium text-on-surface">Help Center</span>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-50">chevron_right</span>
+</button>
+<!-- Settings -->
+<button class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">settings</span>
+<span class="font-medium text-on-surface">Settings</span>
+</div>
+<span class="material-symbols-outlined text-secondary opacity-50">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Logout Button -->
+<div class="mt-8 mb-12">
+<button class="w-full h-[56px] rounded-xl bg-surface-container-high text-error font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-[#f8f9fa]/80 backdrop-blur-3xl shadow-[0px_-8px_24px_rgba(25,28,29,0.06)] rounded-t-lg z-50">
+<div class="flex flex-col items-center justify-center text-[#5e5e5e] px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5e5e5e] px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5e5e5e] px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Sell</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#5e5e5e] px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#2e7d32]/10 text-[#0d631b] rounded-[24px] px-5 py-2 active:scale-90 transition-all duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Profile</span>
+</div>
+</nav>
+</body></html>

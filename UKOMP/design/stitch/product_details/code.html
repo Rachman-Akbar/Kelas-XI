@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organic Market - Product Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#707a6c",
+                        "inverse-primary": "#88d982",
+                        "on-primary-container": "#cbffc2",
+                        "on-tertiary-fixed": "#3f001c",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#a3f69c",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "primary": "#0d631b",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline-variant": "#bfcaba",
+                        "surface-variant": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "on-surface-variant": "#40493d",
+                        "tertiary-container": "#b14b6f",
+                        "on-surface": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-fixed": "#002204",
+                        "tertiary-fixed-dim": "#ffb1c7",
+                        "secondary-container": "#e3e2e2",
+                        "tertiary": "#923357",
+                        "on-tertiary-container": "#ffedf0",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed-dim": "#88d982",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed": "#ffd9e2",
+                        "surface-tint": "#1b6d24",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2e7d32",
+                        "secondary-fixed": "#e3e2e2",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-tertiary-fixed-variant": "#7f2448",
+                        "on-secondary-container": "#646464",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background antialiased">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 dark:bg-zinc-900/80 backdrop-blur-3xl flex justify-between items-center px-6 py-4 h-16 transition-all duration-150">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 duration-150 text-[#5e5e5e] dark:text-zinc-400">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-lg text-[#0d631b] dark:text-[#2e7d32]">Organic Market</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 duration-150 text-[#5e5e5e] dark:text-zinc-400">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 duration-150 text-[#5e5e5e] dark:text-zinc-400">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</nav>
+<main class="pt-16 pb-32 max-w-md mx-auto min-h-screen">
+<!-- Hero: Image Carousel -->
+<section class="relative px-4 mt-2">
+<div class="aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low shadow-sm group">
+<div class="flex h-full w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+<img alt="Product Hero" class="h-full w-full object-cover snap-center flex-shrink-0" data-alt="Premium mirrorless camera with professional lens on a minimalist white stone background with soft editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgTKN4UTB0vDPU0R6HCqmnR0ZsQkxUsVawiI3IhOUNWb0r5j7v1jmBoxoVyXUMoYeAeBVljalAagdlqDFrz4JeURYaI7edegeXXDzJoJgNJ_d-W9RAWLsT536DuaGCRp44jB0Nw0VRvbxM8AaQwc0cPLcTEuo5SZfjP9RbXO5cCdA9HswkEBNSu8USQXT0G0p1yEctBsEEfNbXk1LDjeyG5s_VKGSMRWjlgV9jBjgLz7ZoFIZiSRrN0OF-Z0kAgJlFxdd-iDMBP7u"/>
+<img alt="Product Detail 1" class="h-full w-full object-cover snap-center flex-shrink-0" data-alt="Close-up detail of high-end camera dials and metallic finish with elegant shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCavu3ayaiO0wVfPTjqJImcVajKDVjAJo9rWryi9adP7UyRQsqsMYxcwRlMme7rlphL5UVX7ymfhCt8nD3PWOUlH-SYxC1Zgw3_DcDY_DEl5dUJ_8CVtPjtf5sFZuizU-wdFS_nELFIqvtC_fuM3ojb32NQamvUkCUtMtNQoOJywWqskryGjgfkucFRisVmEoc6b1W2FHtORrstbLuuttp1ELLgxPHANh1RgzRtk2qMmcHXQRjJ0iUMmKqN9kqFjKNoH1Rr3X7jf3rZ"/>
+</div>
+<!-- Carousel Indicators -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-on-surface/20"></div>
+<div class="w-2 h-2 rounded-full bg-on-surface/20"></div>
+</div>
+</div>
+</section>
+<!-- Section 1: Title & Price -->
+<section class="px-6 py-6 space-y-4">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h2 class="font-headline text-2xl font-bold tracking-tight leading-tight text-on-surface">Lumina X-Pro Mirrorless Camera</h2>
+<p class="font-label text-sm font-medium text-secondary flex items-center gap-2">
+<span class="bg-primary-container/10 text-primary px-2 py-0.5 rounded-full text-[10px]">NEW ARRIVAL</span>
+                        SKU: LUM-2024-XP
+                    </p>
+</div>
+<button class="p-2 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-error" data-icon="favorite" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-3xl font-extrabold text-primary tracking-tighter">$1,299.00</span>
+<span class="text-sm text-secondary line-through">$1,450.00</span>
+</div>
+</section>
+<!-- Section 2: Seller Profile Card -->
+<section class="px-4">
+<div class="bg-surface-container-lowest rounded-lg p-5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-primary-container/20 p-0.5">
+<img alt="Seller Avatar" class="w-full h-full object-cover rounded-full" data-alt="Professional profile portrait of a confident male entrepreneur in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfHFYNv-kNXjdor5czkeua8S1HJeTUS8MNcef4LJpyi04__2nUOPlrR6obQ1U5mCup4op9tBGG6EunozNoR49xDX6PrbsDDRZ8eOW8k5We-KcIwduFzZ_lJGfYMatQA_GaPFSjUXxyXwmMam7RyqZTl-4OmCi0HglyWeXIuAMocV1tY1OgvFz4jWa4amDuv9D9-NLWiFQtbXpdcSMopv9_OE1vna2nPzHZKIZl8n8zvAFABe5M5gSqMzasSXYAOM7Cb5Onz5SlvrA2"/>
+</div>
+<div>
+<h3 class="font-headline font-semibold text-on-surface">Elite Store</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold text-on-surface">4.9</span>
+<span class="text-[10px] text-secondary ml-1">(2.4k Reviews)</span>
+</div>
+</div>
+</div>
+<button class="bg-surface-container-high text-on-surface font-semibold py-2.5 px-5 rounded-xl text-sm hover:bg-surface-container-highest transition-colors active:scale-95">
+                    Visit Store
+                </button>
+</div>
+</section>
+<!-- Section 3: Product Description -->
+<section class="px-6 py-8 space-y-3">
+<h4 class="font-headline font-semibold text-lg">Product Description</h4>
+<div class="relative">
+<p class="text-secondary leading-relaxed font-body text-sm overflow-hidden line-clamp-4">
+                    Experience photography in its purest form with the Lumina X-Pro. Engineered for professionals, this mirrorless masterpiece features a 45.7MP full-frame sensor and lightning-fast autofocus that captures the soul of every moment. Its weather-sealed titanium body ensures reliability in the most demanding conditions, while the intuitive UI allows you to focus on your creative vision. The kit includes a 24-70mm f/2.8 professional lens with nano-crystal coating for unparalleled clarity and contrast in any lighting.
+                </p>
+<div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<button class="text-primary font-semibold text-sm flex items-center gap-1 hover:underline">
+                Read More
+                <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+</section>
+<!-- Section 4: Customer Reviews -->
+<section class="px-6 pb-8 space-y-4">
+<div class="flex justify-between items-center">
+<h4 class="font-headline font-semibold text-lg">Reviews</h4>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="flex items-center gap-6 p-4 bg-primary-container/5 rounded-lg">
+<div class="text-center">
+<div class="text-4xl font-extrabold text-on-surface">4.9</div>
+<div class="flex justify-center mt-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] w-3">5</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[92%] h-full bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] w-3">4</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[5%] h-full bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] w-3">3</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="w-[2%] h-full bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] w-3">2</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full"></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] w-3">1</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/80 backdrop-blur-2xl px-6 pt-3 pb-8 flex items-center gap-3 z-50 shadow-[0px_-8px_24px_rgba(25,28,29,0.06)] max-w-md mx-auto left-1/2 -translate-x-1/2 rounded-t-lg">
+<button class="flex items-center justify-center p-4 border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="chat">chat</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 border border-primary text-primary font-bold py-4 rounded-xl hover:bg-primary-container/10 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="shopping_cart">shopping_cart</span>
+            Add to Cart
+        </button>
+<button class="flex-[1.2] bg-[#2E7D32] text-white font-bold py-4 rounded-xl shadow-lg shadow-[#2E7D32]/20 active:scale-95 transition-all">
+            Buy Now
+        </button>
+</div>
+</body></html>

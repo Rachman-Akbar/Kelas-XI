@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#707a6c",
+                    "inverse-primary": "#88d982",
+                    "on-primary-container": "#cbffc2",
+                    "on-tertiary-fixed": "#3f001c",
+                    "background": "#f8f9fa",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#a3f69c",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "secondary": "#5e5e5e",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d9dadb",
+                    "primary": "#0d631b",
+                    "surface-container-highest": "#e1e3e4",
+                    "outline-variant": "#bfcaba",
+                    "surface-variant": "#e1e3e4",
+                    "surface": "#f8f9fa",
+                    "on-surface-variant": "#40493d",
+                    "tertiary-container": "#b14b6f",
+                    "on-surface": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "on-primary-fixed": "#002204",
+                    "tertiary-fixed-dim": "#ffb1c7",
+                    "secondary-container": "#e3e2e2",
+                    "tertiary": "#923357",
+                    "on-tertiary-container": "#ffedf0",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed-dim": "#88d982",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed": "#ffd9e2",
+                    "surface-tint": "#1b6d24",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#2e7d32",
+                    "secondary-fixed": "#e3e2e2",
+                    "surface-container": "#edeeef",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#464747",
+                    "on-primary-fixed-variant": "#005312",
+                    "on-tertiary-fixed-variant": "#7f2448",
+                    "on-secondary-container": "#646464",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 backdrop-blur-3xl px-6 py-4 h-auto">
+<div class="flex flex-col gap-4">
+<!-- Search Bar Area -->
+<div class="flex items-center gap-3">
+<div class="flex-1 flex items-center bg-surface-container-low rounded-full px-5 py-3.5 transition-all duration-200 focus-within:bg-surface-container-lowest focus-within:ring-1 focus-within:ring-outline-variant/15">
+<span class="material-symbols-outlined text-secondary mr-3" style="font-size: 20px;">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-body text-sm font-medium" placeholder="Search products..." type="text" value="Wireless Headphones"/>
+</div>
+<button class="w-12 h-12 flex items-center justify-center bg-primary text-on-primary rounded-full active:scale-95 transition-transform shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex overflow-x-auto gap-2 no-scrollbar pb-2">
+<button class="flex items-center gap-1.5 px-4 py-2 bg-primary-container text-on-primary-container rounded-full text-xs font-semibold whitespace-nowrap">
+                    Sort <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-high text-secondary rounded-full text-xs font-medium whitespace-nowrap">
+                    Price
+                </button>
+<button class="px-4 py-2 bg-surface-container-high text-secondary rounded-full text-xs font-medium whitespace-nowrap">
+                    Condition
+                </button>
+<button class="px-4 py-2 bg-surface-container-high text-secondary rounded-full text-xs font-medium whitespace-nowrap">
+                    Location
+                </button>
+<button class="px-4 py-2 bg-surface-container-high text-secondary rounded-full text-xs font-medium whitespace-nowrap">
+                    Shipping
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-44 px-6 space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="font-headline text-xl font-bold text-on-surface">124 Results found</h2>
+<span class="text-xs font-medium text-secondary">Showing best match</span>
+</div>
+<!-- Product List -->
+<div class="space-y-4">
+<!-- Product Card 1 -->
+<div class="group relative flex items-center p-3 bg-surface-container-lowest rounded-lg hover:shadow-sm transition-all duration-300">
+<div class="relative w-32 h-32 flex-shrink-0 overflow-hidden rounded-md">
+<img class="w-full h-full object-cover" data-alt="Premium silver wireless over-ear headphones on a minimalist soft grey background with clean studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIjyk0fOkyfqU4k2OqVRAxl8qbUQot192wZHy1gUt0WYpFgK1k3C6-pWgSelNBP9npi9Mo-v1PVnXfldfYXJFnWtap7JqTWhkrfEvPS0jBWLGAlTsyPvH1rSKm1WoNJQJu2-UXjrVmhh24QmXUWnNY-SS_-ODKE7XoLnV4ISg3NZ_qeAeKwPoKQyqRv3TLWS8HSuxjywydRvOSbvRnJ8V37fjYGHFvi6QVLO2Nvn5KLrgTG9tFGjpWTHCdSQj9-uifqZ-oBjIiMCxg"/>
+</div>
+<div class="ml-5 flex-1 pr-10">
+<div class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">New Release</div>
+<h3 class="font-headline text-md font-semibold text-on-surface leading-tight mb-2">SonicFlow Pro Max Wireless</h3>
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-lg">$299.00</span>
+<span class="text-[10px] text-secondary line-through">$349.00</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="flex items-center gap-0.5 text-[10px] font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.9 (128)
+                        </span>
+</div>
+</div>
+<button class="absolute right-4 top-4 w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-secondary hover:text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex items-center p-3 bg-surface-container-lowest rounded-lg hover:shadow-sm transition-all duration-300">
+<div class="relative w-32 h-32 flex-shrink-0 overflow-hidden rounded-md">
+<img class="w-full h-full object-cover" data-alt="Matte black high-fidelity studio headphones resting on a wooden surface with warm atmospheric side light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtafyn08L91oUXkbDyukrBGZnLDozzqHLcgqzKDojER9ae8kr9GDGGHOapBXHq7Kcniiw4_BYU2r-jM7SYXDx1IrN9Qbaf6G9EYSsYagXVE1-2hnfTREXM6Lw8mF0lcILaVmqgz2KX1ssJo8zfZJmZGXGw6jhev2ceNd_xIjLPxfPXLXDfUXm9XBpByt0XCKEA7UwWkSSHGhn9fP0NhbwIp8mxA2PI_aDG24hVK_pMciYGLLW4RL77RLFHH_8BcYU2E7mSo9wbA9yN"/>
+</div>
+<div class="ml-5 flex-1 pr-10">
+<div class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">Top Rated</div>
+<h3 class="font-headline text-md font-semibold text-on-surface leading-tight mb-2">AcousticMaster Studio G2</h3>
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-lg">$185.50</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="flex items-center gap-0.5 text-[10px] font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.7 (856)
+                        </span>
+</div>
+</div>
+<button class="absolute right-4 top-4 w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex items-center p-3 bg-surface-container-lowest rounded-lg hover:shadow-sm transition-all duration-300">
+<div class="relative w-32 h-32 flex-shrink-0 overflow-hidden rounded-md">
+<img class="w-full h-full object-cover" data-alt="Sleek white noise-cancelling earbuds in their charging case on a clean marble table with bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7i_z4C0cNh8vMfhwpHMd99RM8Y8EnTeAtLwSnbDQpCJ6fIzyzNyxQaCkq9rZZZk22B2RuciT24X2yipb-_7JJMtMwPOw6yV9ZdsOl0DIGodXFWEgP0NrqPBjcs63DzBgoXjBXJl2JZsVoai6dS1mT1knsxY7wjnRg3ptwY3fbOgBD0fldmgcfkPud05CtaOX-4JZU672E4Ug8SKGgFoMxWSxxB0UJMGXipaEJzwzw48mevSommr7hD7lwdq3QP2sjMv9GLbbX2wjJ"/>
+</div>
+<div class="ml-5 flex-1 pr-10">
+<div class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Flash Deal</div>
+<h3 class="font-headline text-md font-semibold text-on-surface leading-tight mb-2">ZenBuds Active Noise Cancelling</h3>
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-lg">$129.00</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="flex items-center gap-0.5 text-[10px] font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 4.5 (2k+)
+                        </span>
+</div>
+</div>
+<button class="absolute right-4 top-4 w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-secondary hover:text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative flex items-center p-3 bg-surface-container-lowest rounded-lg hover:shadow-sm transition-all duration-300">
+<div class="relative w-32 h-32 flex-shrink-0 overflow-hidden rounded-md">
+<img class="w-full h-full object-cover" data-alt="Retro style brown leather headphones with gold accents displayed on a minimalist white shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHDSJ6Ww4CK5nkV6JFokPXxsS97pc6ovNL-qARGriRzeBKbamZx3q9RM0uO1Hlu42iUIuoEfQl0CywV6z8y2RtUHtpjzGYjfkntG037wS1kKz7ZWoVW8LaqEhZky9nwJoZXmZ86PUq3krfUzvImhwzK7kuDjIZq4Ic9JUhjH-5tTSjizuCzph5psT6lppPYYrJ_yRWwnTiFCLwGor47q7s4dcMZX5vyqcv19syCCOfc8u3iC3N37V9RU0NWS_WkL4DPxCL1qtK6wm3"/>
+</div>
+<div class="ml-5 flex-1 pr-10">
+<div class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-1">Rare Item</div>
+<h3 class="font-headline text-md font-semibold text-on-surface leading-tight mb-2">Vintage Heritage Wireless Edition</h3>
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-lg">$420.00</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="flex items-center gap-0.5 text-[10px] font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span> 5.0 (42)
+                        </span>
+</div>
+</div>
+<button class="absolute right-4 top-4 w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-secondary hover:text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-[#f8f9fa]/80 backdrop-blur-3xl z-50 rounded-t-[2rem] shadow-[0px_-8px_24px_rgba(25,28,29,0.06)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-[#5e5e5e] dark:text-zinc-400 px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Home</span>
+</a>
+<!-- Search (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-[#2e7d32]/10 dark:bg-[#2e7d32]/20 text-[#0d631b] dark:text-[#4caf50] rounded-[24px] px-5 py-2 active:scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Search</span>
+</a>
+<!-- Sell -->
+<a class="flex flex-col items-center justify-center text-[#5e5e5e] dark:text-zinc-400 px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-size: 32px; color: #0d631b;">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Sell</span>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-[#5e5e5e] dark:text-zinc-400 px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]" href="#">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Inbox</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#5e5e5e] dark:text-zinc-400 px-5 py-2 active:scale-90 transition-all duration-200 ease-out hover:text-[#0d631b]" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-tight">Profile</span>
+</a>
+</nav>
+<!-- Style helper for removing scrollbar -->
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

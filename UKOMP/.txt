@@ -1,0 +1,4 @@
+tugas utama adalah 
+1. Regristasi dan Data Pengguna lupa paswword 
+2. Tipe Barang / Jasa yang akan didaftarkan di etalase untuk dijual
+3. Detail Barang, foto, harga, ongkir, info lainnya
