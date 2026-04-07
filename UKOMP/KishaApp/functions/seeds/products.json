@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "title": "Beras Organik Premium 5kg",
+      "description": "Beras organik tanpa pestisida, cocok untuk kebutuhan harian keluarga.",
+      "price": 125000,
+      "imageUrl": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=80",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "category": "Sembako",
+      "sellerId": "seed-seller-01",
+      "sellerName": "Tani Sehat Nusantara",
+      "location": "Bandung",
+      "type": "product"
+    },
+    {
+      "title": "Sayur Pack Organik",
+      "description": "Paket sayur segar organik isi 6 jenis panen pagi hari.",
+      "price": 48000,
+      "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "category": "Sayur",
+      "sellerId": "seed-seller-02",
+      "sellerName": "Kebun Hijau Lestari",
+      "location": "Bogor",
+      "type": "product"
+    },
+    {
+      "title": "Madu Hutan Asli 500ml",
+      "description": "Madu hutan murni tanpa campuran, rasa manis alami.",
+      "price": 89000,
+      "imageUrl": "https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=1200&q=80",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "category": "Minuman",
+      "sellerId": "seed-seller-03",
+      "sellerName": "Lebah Alami",
+      "location": "Yogyakarta",
+      "type": "product"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Sembako"
+    },
+    {
+      "name": "Sayur"
+    },
+    {
+      "name": "Buah"
+    },
+    {
+      "name": "Minuman"
+    }
+  ]
+}
