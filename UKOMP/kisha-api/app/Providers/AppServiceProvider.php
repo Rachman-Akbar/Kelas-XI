@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Modules\Product\Models\Product;
+use App\Modules\Product\Models\ProductImage;
+use App\Modules\Product\Observers\ProductImageObserver;
+use App\Modules\Product\Observers\ProductObserver;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Product::observe(ProductObserver::class);
+        ProductImage::observe(ProductImageObserver::class);
+
         ResetPassword::createUrlUsing(function ($notifiable, string $token): string {
             $frontendUrl = rtrim(config('app.frontend_url', env('FRONTEND_URL', 'http://localhost:3000')), '/');
             $email = urlencode($notifiable->getEmailForPasswordReset());
