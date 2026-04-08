@@ -28,7 +28,7 @@ export default function Home() {
             Platform ini membatasi produk, transaksi, dan pengguna hanya di area desa yang sama agar ekonomi lokal tetap berputar di komunitas sendiri.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/login" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800">
+            <Link href="/auth/login" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800">
               Masuk ke sistem
             </Link>
             <Link href="/admin" className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:text-slate-950">

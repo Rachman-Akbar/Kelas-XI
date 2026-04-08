@@ -1,1 +1,1 @@
-export * from '@/services/admin';
+export { AdminLayout, AdminPage, AdminTaskCard } from './layouts';

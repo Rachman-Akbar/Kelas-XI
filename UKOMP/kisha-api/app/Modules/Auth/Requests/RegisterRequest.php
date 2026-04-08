@@ -19,7 +19,7 @@ class RegisterRequest extends FormRequest
             'email' => ['required', 'email', 'max:120', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', Rule::in(['seller', 'buyer'])],
-            'village_id' => ['required', 'integer', 'exists:villages,id'],
+            'village_id' => ['nullable', 'integer', 'exists:villages,id'],
         ];
     }
 }

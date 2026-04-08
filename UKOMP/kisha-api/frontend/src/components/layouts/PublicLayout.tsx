@@ -11,7 +11,7 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
             Local Market Village
           </Link>
           <nav className="flex items-center gap-3 text-sm font-medium text-slate-600">
-            <Link href="/login" className="rounded-full px-4 py-2 transition hover:bg-slate-900 hover:text-white">
+            <Link href="/auth/login" className="rounded-full px-4 py-2 transition hover:bg-slate-900 hover:text-white">
               Login
             </Link>
             <Link href="/admin" className="rounded-full bg-slate-900 px-4 py-2 text-white transition hover:bg-slate-700">

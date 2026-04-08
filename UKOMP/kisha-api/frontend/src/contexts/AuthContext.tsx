@@ -44,8 +44,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     try {
-      const response = await authService.me();
-      setUser(response.data);
+      const user = await authService.me();
+
+      if (user) {
+        setUser(user);
+      } else {
+        clearSession();
+      }
     } catch {
       clearSession();
     } finally {
@@ -66,6 +71,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       await authService.logout();
     } finally {
       clearSession();
+    }
+
+    // Replace entire history so back button can't go back to protected pages
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', '/auth/login');
     }
   }, [clearSession]);
 

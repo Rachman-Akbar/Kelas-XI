@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout *)",
+      "Bash(npx *)",
+      "Bash(npm run *)",
+      "Bash(taskkill *)",
+      "Bash(dir *)",
+      "Bash(mkdir *)",
+      "Bash(move *)",
+      "Bash(rmdir *)",
+      "Bash(netstat *)",
+      "Bash(findstr *)"
+    ]
+  },
+  "$version": 3
+}

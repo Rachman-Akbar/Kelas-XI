@@ -42,7 +42,7 @@ export interface RegisterPayload {
   password: string;
   password_confirmation: string;
   role: Exclude<Role, 'admin'>;
-  village_id: number;
+  village_id?: number;
   device_name?: string;
 }
 
