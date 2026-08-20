@@ -26,10 +26,12 @@ class GuruController extends Controller
                 'data' => $gurus
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -49,10 +51,12 @@ class GuruController extends Controller
                 'data' => $guru
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Guru tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -82,10 +86,12 @@ class GuruController extends Controller
                 'data' => $guru
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -117,10 +123,12 @@ class GuruController extends Controller
                 'data' => $guru
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -139,10 +147,12 @@ class GuruController extends Controller
                 'message' => 'Guru berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

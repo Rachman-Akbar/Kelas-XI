@@ -65,10 +65,12 @@ class GuruPenggantiController extends Controller
                 'data' => GuruPenggantiResource::collection($guruPenggantis)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru pengganti',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -120,6 +122,9 @@ class GuruPenggantiController extends Controller
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             \Log::error('GuruPengganti Store Error:', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -127,7 +132,6 @@ class GuruPenggantiController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan guru pengganti',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -148,10 +152,12 @@ class GuruPenggantiController extends Controller
                 'data' => new GuruPenggantiResource($guruPengganti)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Guru pengganti tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -220,10 +226,12 @@ class GuruPenggantiController extends Controller
                 'data' => GuruPenggantiResource::collection($guruPenggantis)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru pengganti terfilter',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -245,8 +253,13 @@ class GuruPenggantiController extends Controller
                 'status_penggantian' => 'sometimes|in:pending,disetujui,ditolak,dijadwalkan,selesai,dibatalkan,tidak_hadir',
                 'keterangan' => 'sometimes|string|nullable',
                 'catatan_approval' => 'sometimes|string|nullable',
-                'disetujui_oleh' => 'sometimes|exists:users,id|nullable',
             ]);
+
+            if (isset($validated['status_penggantian']) && in_array($validated['status_penggantian'], ['disetujui', 'ditolak', 'dijadwalkan', 'selesai', 'tidak_hadir'], true)) {
+                $validated['disetujui_oleh'] = $request->user()->id;
+            } elseif (($validated['status_penggantian'] ?? null) === 'pending') {
+                $validated['disetujui_oleh'] = null;
+            }
 
             $guruPengganti->update($validated);
 
@@ -259,10 +272,12 @@ class GuruPenggantiController extends Controller
                 'data' => new GuruPenggantiResource($guruPengganti)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate guru pengganti',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -282,10 +297,12 @@ class GuruPenggantiController extends Controller
                 'message' => 'Guru pengganti berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus guru pengganti',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

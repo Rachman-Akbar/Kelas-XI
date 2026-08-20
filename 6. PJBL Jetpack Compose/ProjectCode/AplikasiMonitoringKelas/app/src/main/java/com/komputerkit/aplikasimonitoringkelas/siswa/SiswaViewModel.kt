@@ -242,7 +242,6 @@ class SiswaViewModel(
 
             try {
                 val token = authRepository.getToken()
-                android.util.Log.d("SiswaViewModel", "Token: ${if (token.isNotEmpty()) "Present (${token.take(20)}...)" else "EMPTY!"}")
                 android.util.Log.d("SiswaViewModel", "Calling API: getSchedules(kelasId=$kelasId, hari=$hari)")
 
                 // Load reference data and WAIT for completion before proceeding
@@ -491,7 +490,6 @@ class SiswaViewModel(
 
             try {
                 val token = authRepository.getToken()
-                android.util.Log.d("SiswaViewModel", "Token: ${if (token.isNotEmpty()) "Present (${token.take(20)}...)" else "EMPTY!"}")
                 android.util.Log.d("SiswaViewModel", "Calling API: getStudentAttendance(kelasId=$kelasId)")
 
                 // Load reference data first and wait for completion
@@ -570,7 +568,6 @@ class SiswaViewModel(
 
             try {
                 val token = authRepository.getToken()
-                android.util.Log.d("SiswaViewModel", "Token: ${if (token.isNotEmpty()) "Present (${token.take(20)}...)" else "EMPTY!"}")
                 android.util.Log.d("SiswaViewModel", "Calling API: getTeacherAttendance(kelasId=$kelasId)")
                 android.util.Log.d("SiswaViewModel", "Loading teacher attendances for kelasId: $kelasId")
 
@@ -1284,7 +1281,6 @@ class SiswaViewModel(
             try {
                 val token = authRepository.getToken()
                 val userId = authRepository.getUserId()
-                android.util.Log.d("SiswaViewModel", "Token obtained: ${token.take(20)}..., User ID: $userId")
                 
                 val request = com.komputerkit.aplikasimonitoringkelas.data.models.StudentAttendanceRequest(
                     siswa_id = siswaId,
@@ -1335,7 +1331,6 @@ class SiswaViewModel(
             try {
                 val token = authRepository.getToken()
                 val userId = authRepository.getUserId()
-                android.util.Log.d("SiswaViewModel", "Token obtained: ${token.take(20)}..., User ID: $userId")
                 
                 // Get current time for waktu_datang if status is 'hadir' or 'telat'
                 val waktuDatang = if (statusKehadiran == "hadir" || statusKehadiran == "telat") {

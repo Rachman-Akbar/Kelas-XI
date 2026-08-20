@@ -16,6 +16,7 @@ class Import extends Model
         'total_rows',
         'processed_rows',
         'successful_rows',
+        'failed_rows_count',
         'completed_at',
     ];
 
@@ -23,6 +24,7 @@ class Import extends Model
         'total_rows' => 'integer',
         'processed_rows' => 'integer',
         'successful_rows' => 'integer',
+        'failed_rows_count' => 'integer',
         'completed_at' => 'datetime',
     ];
 

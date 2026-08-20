@@ -37,7 +37,8 @@ interface ApiService {
     suspend fun getStudentAttendance(
         @Header("Authorization") token: String,
         @Query("tanggal") tanggal: String? = null,
-        @Query("kelas_id") kelasId: Int? = null
+        @Query("kelas_id") kelasId: Int? = null,
+        @Query("per_page") perPage: Int? = 100
     ): Response<ApiResult<List<StudentAttendance>>>
 
     @POST("kehadiran")

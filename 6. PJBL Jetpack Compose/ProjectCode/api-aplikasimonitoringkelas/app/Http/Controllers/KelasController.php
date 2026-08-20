@@ -22,10 +22,12 @@ class KelasController extends Controller
                 'data' => $kelas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data kelas',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -49,10 +51,12 @@ class KelasController extends Controller
                 'data' => $kelas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Kelas tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -82,10 +86,12 @@ class KelasController extends Controller
                 'data' => $kelas
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan kelas',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -117,10 +123,12 @@ class KelasController extends Controller
                 'data' => $kelas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate kelas',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -139,10 +147,12 @@ class KelasController extends Controller
                 'message' => 'Kelas berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus kelas',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

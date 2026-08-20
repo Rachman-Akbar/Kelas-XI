@@ -6,21 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        // Modify the enum to include 'tidak_hadir'
-        \DB::statement("ALTER TABLE guru_pengganties MODIFY COLUMN status_penggantian ENUM('pending', 'dijadwalkan', 'selesai', 'dibatalkan', 'tidak_hadir')");
+        Schema::table('guru_pengganties', function (Blueprint $table) {
+            $table->string('status_penggantian', 30)->default('pending')->change();
+        });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        // Revert to original enum without 'tidak_hadir'
-        \DB::statement("ALTER TABLE guru_pengganties MODIFY COLUMN status_penggantian ENUM('pending', 'dijadwalkan', 'selesai', 'dibatalkan')");
+        Schema::table('guru_pengganties', function (Blueprint $table) {
+            $table->string('status_penggantian', 30)->default('pending')->change();
+        });
     }
 };

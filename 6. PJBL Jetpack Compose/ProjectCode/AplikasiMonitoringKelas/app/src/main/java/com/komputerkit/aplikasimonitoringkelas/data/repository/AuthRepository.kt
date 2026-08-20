@@ -42,15 +42,11 @@ class AuthRepository(private val context: Context) {
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
                         if (loginResponse != null && loginResponse.success) {
-                            android.util.Log.d("AuthRepository", "=== LOGIN SUCCESS ===")
-                            android.util.Log.d("AuthRepository", "User ID: ${loginResponse.data?.user?.id}")
-                            android.util.Log.d("AuthRepository", "User Name: ${loginResponse.data?.user?.name}")
-                            android.util.Log.d("AuthRepository", "User Role: ${loginResponse.data?.user?.role}")
-                            android.util.Log.d("AuthRepository", "Kelas ID from API: ${loginResponse.data?.user?.kelas_id}")
-                            android.util.Log.d("AuthRepository", "Guru ID from API: ${loginResponse.data?.user?.guru_id}")
-
-                            // Save token and user info to DataStore
-                            saveToken(loginResponse.data?.token ?: "")
+                            val token = loginResponse.data?.token.orEmpty()
+                            if (token.isBlank()) {
+                                return Result.failure(Exception("Token autentikasi tidak diterima dari server"))
+                            }
+                            saveToken(token)
                             saveUserInfo(
                                 id = loginResponse.data?.user?.id ?: 0,
                                 name = loginResponse.data?.user?.name ?: "",
@@ -106,12 +102,13 @@ class AuthRepository(private val context: Context) {
         return try {
             val token = getToken()
             if (token.isNotEmpty()) {
-                ApiConfig.apiService.logout("Bearer $token")
+                runCatching { ApiConfig.apiService.logout("Bearer $token") }
             }
             clearToken()
             Result.success(Unit)
         } catch (e: Exception) {
-            Result.failure(e)
+            clearToken()
+            Result.success(Unit)
         }
     }
 
@@ -131,32 +128,21 @@ class AuthRepository(private val context: Context) {
     }
 
     private suspend fun saveUserInfo(id: Int, name: String, role: String, kelasId: Int? = null, guruId: Int? = null) {
-        android.util.Log.d("AuthRepository", "=== SAVING USER INFO TO DATASTORE ===")
-        android.util.Log.d("AuthRepository", "ID: $id")
-        android.util.Log.d("AuthRepository", "Name: $name")
-        android.util.Log.d("AuthRepository", "Role: $role")
-        android.util.Log.d("AuthRepository", "Kelas ID to save: $kelasId")
-        android.util.Log.d("AuthRepository", "Guru ID to save: $guruId")
-        
         context.dataStore.edit { preferences ->
             preferences[USER_ID_KEY] = id.toString()
             preferences[USER_NAME_KEY] = name
             preferences[USER_ROLE_KEY] = role
             if (kelasId != null) {
                 preferences[KELAS_ID_KEY] = kelasId.toString()
-                android.util.Log.d("AuthRepository", "Kelas ID SAVED: ${kelasId.toString()}")
             } else {
-                android.util.Log.w("AuthRepository", "Kelas ID is NULL - not saving!")
+                preferences.remove(KELAS_ID_KEY)
             }
             if (guruId != null) {
                 preferences[GURU_ID_KEY] = guruId.toString()
-                android.util.Log.d("AuthRepository", "Guru ID SAVED: ${guruId.toString()}")
             } else {
-                android.util.Log.w("AuthRepository", "Guru ID is NULL - not saving!")
+                preferences.remove(GURU_ID_KEY)
             }
         }
-        
-        android.util.Log.d("AuthRepository", "=== USER INFO SAVED ===")
     }
 
     suspend fun getUserId(): Int {
@@ -177,13 +163,7 @@ class AuthRepository(private val context: Context) {
     suspend fun getKelasId(): Int? {
         val preferences = context.dataStore.data.first()
         val kelasIdString = preferences[KELAS_ID_KEY]
-        val kelasId = kelasIdString?.toIntOrNull()
-        
-        android.util.Log.d("AuthRepository", "=== GET KELAS ID ===")
-        android.util.Log.d("AuthRepository", "Kelas ID String from DataStore: $kelasIdString")
-        android.util.Log.d("AuthRepository", "Kelas ID Int: $kelasId")
-        
-        return kelasId
+        return kelasIdString?.toIntOrNull()
     }
 
     suspend fun getGuruId(): Int? {

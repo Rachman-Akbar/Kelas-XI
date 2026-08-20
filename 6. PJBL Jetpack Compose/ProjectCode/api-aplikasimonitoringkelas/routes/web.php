@@ -52,7 +52,7 @@ Route::get('/home', function () {
     if (auth()->check()) {
         // If user is authenticated, redirect based on role
         $user = auth()->user();
-        if ($user->hasRole('admin') || $user->hasRole('kepsek') || $user->hasRole('kurikulum')) {
+        if ($user->hasRole('admin')) {
             return redirect('/admin');
         } else {
             // Redirect regular users elsewhere (you can adjust this logic)

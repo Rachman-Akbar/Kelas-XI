@@ -42,12 +42,6 @@ class KehadiranGuruController extends Controller
                 });
             }
 
-            // Filter by status_kehadiran
-            if ($request->filled('status_kehadiran')) {
-                $query->where('status_kehadiran', $request->status_kehadiran);
-            }
-
-            // Filter by status_kehadiran
             if ($request->filled('status_kehadiran')) {
                 $query->where('status_kehadiran', $request->status_kehadiran);
             }
@@ -72,10 +66,12 @@ class KehadiranGuruController extends Controller
                 ]
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data kehadiran guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -99,10 +95,12 @@ class KehadiranGuruController extends Controller
                 'data' => $kehadiran
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Kehadiran guru tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -121,7 +119,6 @@ class KehadiranGuruController extends Controller
                 'waktu_datang' => 'nullable|date_format:H:i',
                 'durasi_keterlambatan' => 'nullable|integer|min:0',
                 'keterangan' => 'nullable|string',
-                'diinput_oleh' => 'nullable|exists:users,id',
             ]);
 
             // Check if kehadiran already exists
@@ -137,6 +134,7 @@ class KehadiranGuruController extends Controller
                 ], 422);
             }
 
+            $validated['diinput_oleh'] = $request->user()->id;
             $kehadiran = KehadiranGuru::create($validated);
 
             // Load relationships for response
@@ -148,10 +146,12 @@ class KehadiranGuruController extends Controller
                 'data' => $kehadiran
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan kehadiran guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -172,9 +172,9 @@ class KehadiranGuruController extends Controller
                 'waktu_datang' => 'nullable|date_format:H:i',
                 'durasi_keterlambatan' => 'nullable|integer|min:0',
                 'keterangan' => 'nullable|string',
-                'diinput_oleh' => 'nullable|exists:users,id',
             ]);
 
+            $validated['diinput_oleh'] = $request->user()->id;
             $kehadiran->update($validated);
 
             // Load relationships for response
@@ -186,10 +186,12 @@ class KehadiranGuruController extends Controller
                 'data' => $kehadiran
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate kehadiran guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -208,10 +210,12 @@ class KehadiranGuruController extends Controller
                 'message' => 'Kehadiran guru berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus kehadiran guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -237,10 +241,12 @@ class KehadiranGuruController extends Controller
                 'data' => $kehadirans
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil kehadiran guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -272,10 +278,12 @@ class KehadiranGuruController extends Controller
                 'data' => $rekap
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil rekap kehadiran guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

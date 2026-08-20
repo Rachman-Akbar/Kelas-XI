@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('failed_import_rows', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('import_id')->index();
+            $table->unsignedInteger('row_number')->nullable();
             $table->json('data')->nullable();
             $table->text('validation_error')->nullable();
             $table->timestamps();

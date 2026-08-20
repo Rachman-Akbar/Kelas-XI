@@ -25,10 +25,12 @@ class MataPelajaranController extends Controller
                 'data' => $mataPelajarans
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data mata pelajaran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -48,10 +50,12 @@ class MataPelajaranController extends Controller
                 'data' => $mataPelajaran
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Mata pelajaran tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -79,10 +83,12 @@ class MataPelajaranController extends Controller
                 'data' => $mataPelajaran
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan mata pelajaran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -112,10 +118,12 @@ class MataPelajaranController extends Controller
                 'data' => $mataPelajaran
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate mata pelajaran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -134,10 +142,12 @@ class MataPelajaranController extends Controller
                 'message' => 'Mata pelajaran berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus mata pelajaran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

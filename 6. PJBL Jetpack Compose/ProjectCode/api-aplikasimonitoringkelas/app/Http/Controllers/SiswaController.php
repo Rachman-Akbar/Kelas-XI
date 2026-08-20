@@ -34,10 +34,12 @@ class SiswaController extends Controller
                 'data' => $siswas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -57,10 +59,12 @@ class SiswaController extends Controller
                 'data' => $siswa
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Siswa tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -95,10 +99,12 @@ class SiswaController extends Controller
                 'data' => $siswa
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -135,10 +141,12 @@ class SiswaController extends Controller
                 'data' => $siswa
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -157,10 +165,12 @@ class SiswaController extends Controller
                 'message' => 'Siswa berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -181,10 +191,12 @@ class SiswaController extends Controller
                 'data' => $siswas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

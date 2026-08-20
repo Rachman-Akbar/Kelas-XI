@@ -71,10 +71,12 @@ class KehadiranController extends Controller
                 ]
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data kehadiran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -94,10 +96,12 @@ class KehadiranController extends Controller
                 'data' => $kehadiran
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Kehadiran tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -129,6 +133,7 @@ class KehadiranController extends Controller
                 ], 422);
             }
 
+            $validated['diinput_oleh'] = $request->user()->id;
             $kehadiran = Kehadiran::create($validated);
 
             return response()->json([
@@ -137,10 +142,12 @@ class KehadiranController extends Controller
                 'data' => $kehadiran
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan kehadiran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -161,6 +168,7 @@ class KehadiranController extends Controller
                 'keterangan' => 'nullable|string',
             ]);
 
+            $validated['diinput_oleh'] = $request->user()->id;
             $kehadiran->update($validated);
 
             return response()->json([
@@ -169,10 +177,12 @@ class KehadiranController extends Controller
                 'data' => $kehadiran
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate kehadiran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -191,10 +201,12 @@ class KehadiranController extends Controller
                 'message' => 'Kehadiran berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus kehadiran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -216,10 +228,12 @@ class KehadiranController extends Controller
                 'data' => $kehadirans
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil kehadiran siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -241,10 +255,12 @@ class KehadiranController extends Controller
                 'data' => $kehadirans
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil kehadiran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -275,10 +291,12 @@ class KehadiranController extends Controller
                 'data' => $rekap
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil rekap kehadiran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -310,10 +328,12 @@ class KehadiranController extends Controller
                 'data' => $kehadirans
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil kehadiran siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -344,10 +364,12 @@ class KehadiranController extends Controller
                 'data' => $siswas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil daftar siswa',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -389,10 +411,12 @@ class KehadiranController extends Controller
                 'data' => $kehadiran
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan kehadiran umum',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

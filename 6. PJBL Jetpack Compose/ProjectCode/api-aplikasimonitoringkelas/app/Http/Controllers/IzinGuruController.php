@@ -88,10 +88,12 @@ class IzinGuruController extends Controller
                 ]
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data izin guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -121,10 +123,12 @@ class IzinGuruController extends Controller
                 'data' => IzinGuruResource::collection($izinGurus)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data izin guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -147,10 +151,12 @@ class IzinGuruController extends Controller
                 'data' => IzinGuruResource::collection($izinGurus)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data izin guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -173,14 +179,27 @@ class IzinGuruController extends Controller
                 'keterangan' => 'nullable|string',
                 'file_surat' => 'nullable|string',
                 'status_approval' => 'nullable|in:pending,disetujui,ditolak',
-                'disetujui_oleh' => 'nullable|exists:users,id',
                 'tanggal_approval' => 'nullable|date',
                 'catatan_approval' => 'nullable|string',
             ]);
 
             // Set default status_approval if not provided
-            if (!isset($validated['status_approval'])) {
+            if ($request->user()->role === 'guru') {
+                if (!$request->user()->guru_id || (int) $validated['guru_id'] !== (int) $request->user()->guru_id) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Guru hanya dapat mengajukan izin untuk dirinya sendiri',
+                    ], 403);
+                }
                 $validated['status_approval'] = 'pending';
+                unset($validated['tanggal_approval']);
+            } elseif (!isset($validated['status_approval'])) {
+                $validated['status_approval'] = 'pending';
+            }
+
+            if (in_array($validated['status_approval'], ['disetujui', 'ditolak'], true)) {
+                $validated['disetujui_oleh'] = $request->user()->id;
+                $validated['tanggal_approval'] = now();
             }
 
             // Calculate duration in days
@@ -211,6 +230,9 @@ class IzinGuruController extends Controller
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             \Log::error('IzinGuru Store Error:', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -218,7 +240,6 @@ class IzinGuruController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan izin guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -239,10 +260,12 @@ class IzinGuruController extends Controller
                 'data' => new IzinGuruResource($izinGuru)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Izin guru tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -264,10 +287,17 @@ class IzinGuruController extends Controller
                 'keterangan' => 'nullable|string',
                 'file_surat' => 'nullable|string',
                 'status_approval' => 'sometimes|in:pending,disetujui,ditolak',
-                'disetujui_oleh' => 'nullable|exists:users,id',
                 'tanggal_approval' => 'nullable|date',
                 'catatan_approval' => 'nullable|string',
             ]);
+
+            if (isset($validated['status_approval']) && in_array($validated['status_approval'], ['disetujui', 'ditolak'], true)) {
+                $validated['disetujui_oleh'] = $request->user()->id;
+                $validated['tanggal_approval'] = now();
+            } elseif (($validated['status_approval'] ?? null) === 'pending') {
+                $validated['disetujui_oleh'] = null;
+                $validated['tanggal_approval'] = null;
+            }
 
             if (isset($validated['tanggal_mulai']) && isset($validated['tanggal_selesai'])) {
                 // Calculate duration in days
@@ -287,10 +317,12 @@ class IzinGuruController extends Controller
                 'data' => new IzinGuruResource($izinGuru)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate izin guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -310,10 +342,12 @@ class IzinGuruController extends Controller
                 'message' => 'Izin guru berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus izin guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

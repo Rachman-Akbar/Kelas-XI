@@ -68,6 +68,9 @@ class AuthController extends Controller
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             Log::error('API Registration exception', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -76,7 +79,6 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Registration failed',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -200,6 +202,9 @@ class AuthController extends Controller
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             Log::error('API Login exception', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),
@@ -208,7 +213,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'success' => false,
-                'message' => 'Login gagal: ' . $e->getMessage()
+                'message' => 'Login gagal karena terjadi kesalahan pada server'
             ], 500);
         }
     }
@@ -251,6 +256,9 @@ class AuthController extends Controller
                 ]
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             Log::error('API Me error', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -258,7 +266,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'success' => false,
-                'message' => 'Failed to retrieve user data: ' . $e->getMessage()
+                'message' => 'Gagal mengambil data pengguna'
             ], 500);
         }
     }
@@ -291,6 +299,9 @@ class AuthController extends Controller
                 'message' => 'Logout berhasil'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             Log::error('API Logout error', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -298,7 +309,7 @@ class AuthController extends Controller
 
             return response()->json([
                 'success' => false,
-                'message' => 'Logout gagal: ' . $e->getMessage()
+                'message' => 'Logout gagal karena terjadi kesalahan pada server'
             ], 500);
         }
     }
@@ -331,6 +342,9 @@ class AuthController extends Controller
                 'message' => 'Logged out from all devices successfully'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             Log::error('API Logout all error', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -339,7 +353,6 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Logout failed',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -404,6 +417,9 @@ class AuthController extends Controller
                 'errors' => $e->errors()
             ], 422);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             Log::error('API Change password exception', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
@@ -412,7 +428,6 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Password change failed',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

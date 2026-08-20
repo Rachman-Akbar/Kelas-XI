@@ -18,6 +18,7 @@ class Kehadiran extends Model
         'tanggal',
         'status',
         'keterangan',
+        'diinput_oleh',
     ];
 
     protected $casts = [
@@ -34,5 +35,10 @@ class Kehadiran extends Model
     public function jadwal()
     {
         return $this->belongsTo(Jadwal::class);
+    }
+
+    public function diinputOleh()
+    {
+        return $this->belongsTo(User::class, 'diinput_oleh');
     }
 }

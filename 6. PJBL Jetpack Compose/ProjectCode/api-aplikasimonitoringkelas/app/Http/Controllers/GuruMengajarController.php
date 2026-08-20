@@ -65,10 +65,12 @@ class GuruMengajarController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru mengajar',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -125,10 +127,12 @@ class GuruMengajarController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru tidak masuk',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -161,10 +165,12 @@ class GuruMengajarController extends Controller
                 'data' => $jadwal
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan guru mengajar',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -202,10 +208,12 @@ class GuruMengajarController extends Controller
                 'data' => $jadwal
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate guru mengajar',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -251,10 +259,12 @@ class GuruMengajarController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru mengajar',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -300,10 +310,12 @@ class GuruMengajarController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru tidak masuk',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -338,10 +350,12 @@ class GuruMengajarController extends Controller
                 'data' => $jadwal
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate guru mengajar',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

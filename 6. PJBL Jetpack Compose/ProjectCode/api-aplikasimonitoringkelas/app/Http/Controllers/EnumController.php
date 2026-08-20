@@ -89,10 +89,12 @@ class EnumController extends Controller
                 'data' => array_values($values)
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Failed to fetch distinct values',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

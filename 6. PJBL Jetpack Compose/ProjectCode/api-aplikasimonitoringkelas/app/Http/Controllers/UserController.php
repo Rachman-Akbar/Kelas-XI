@@ -23,10 +23,12 @@ class UserController extends Controller
                 'data' => $users
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data user',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -45,10 +47,12 @@ class UserController extends Controller
                 'data' => $user
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'User tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -67,10 +71,12 @@ class UserController extends Controller
                 'data' => $users
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data user',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -102,10 +108,12 @@ class UserController extends Controller
                 'data' => $user
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan user',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -142,10 +150,12 @@ class UserController extends Controller
                 'data' => $user
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate user',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -164,10 +174,12 @@ class UserController extends Controller
                 'message' => 'User berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus user',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

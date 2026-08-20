@@ -11,10 +11,28 @@ class JadwalController extends Controller
     /**
      * Display a listing of jadwal.
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         try {
-            $jadwals = Jadwal::with(['kelas', 'mataPelajaran', 'guru'])->get();
+            $query = Jadwal::with(['kelas', 'mataPelajaran', 'guru']);
+
+            if ($request->filled('kelas_id')) {
+                $query->where('kelas_id', $request->integer('kelas_id'));
+            }
+
+            if ($request->filled('guru_id')) {
+                $query->where('guru_id', $request->integer('guru_id'));
+            }
+
+            if ($request->filled('hari')) {
+                $query->where('hari', $request->string('hari'));
+            }
+
+            if ($request->filled('status')) {
+                $query->where('status', $request->string('status'));
+            }
+
+            $jadwals = $query->orderBy('hari')->orderBy('jam_ke')->orderBy('jam_mulai')->get();
 
             return response()->json([
                 'success' => true,
@@ -22,10 +40,12 @@ class JadwalController extends Controller
                 'data' => $jadwals
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -45,10 +65,12 @@ class JadwalController extends Controller
                 'data' => $jadwal
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Jadwal tidak ditemukan',
-                'error' => $e->getMessage()
             ], 404);
         }
     }
@@ -64,9 +86,11 @@ class JadwalController extends Controller
                 'mata_pelajaran_id' => 'required|exists:mata_pelajarans,id',
                 'guru_id' => 'required|exists:gurus,id',
                 'hari' => 'required|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu',
+                'jam_ke' => 'required|integer|min:1',
                 'jam_mulai' => 'required|date_format:H:i',
                 'jam_selesai' => 'required|date_format:H:i|after:jam_mulai',
                 'ruangan' => 'nullable|string|max:20',
+                'tahun_ajaran' => 'nullable|string|max:20',
                 'status' => 'required|in:aktif,nonaktif,batal',
             ]);
 
@@ -78,10 +102,12 @@ class JadwalController extends Controller
                 'data' => $jadwal
             ], 201);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menambahkan jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -99,9 +125,11 @@ class JadwalController extends Controller
                 'mata_pelajaran_id' => 'sometimes|exists:mata_pelajarans,id',
                 'guru_id' => 'sometimes|exists:gurus,id',
                 'hari' => 'sometimes|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu',
+                'jam_ke' => 'sometimes|integer|min:1',
                 'jam_mulai' => 'sometimes|date_format:H:i',
                 'jam_selesai' => 'sometimes|date_format:H:i|after:jam_mulai',
                 'ruangan' => 'nullable|string|max:20',
+                'tahun_ajaran' => 'nullable|string|max:20',
                 'status' => 'sometimes|in:aktif,nonaktif,batal',
             ]);
 
@@ -113,10 +141,12 @@ class JadwalController extends Controller
                 'data' => $jadwal
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengupdate jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -135,10 +165,12 @@ class JadwalController extends Controller
                 'message' => 'Jadwal berhasil dihapus'
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal menghapus jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -161,10 +193,12 @@ class JadwalController extends Controller
                 'data' => $jadwals
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal kelas',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -198,10 +232,12 @@ class JadwalController extends Controller
                 'data' => $jadwals
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -223,10 +259,12 @@ class JadwalController extends Controller
                 'data' => $jadwals
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -271,10 +309,12 @@ class JadwalController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -321,10 +361,12 @@ class JadwalController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil detail jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -353,10 +395,12 @@ class JadwalController extends Controller
                 'data' => $kelas
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data kelas',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -387,10 +431,12 @@ class JadwalController extends Controller
                 'data' => $gurus
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data guru',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -423,10 +469,12 @@ class JadwalController extends Controller
                 'data' => $mataPelajarans
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil data mata pelajaran',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -469,10 +517,12 @@ class JadwalController extends Controller
                 ], 404);
             }
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jam ke',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -520,10 +570,12 @@ class JadwalController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -582,10 +634,12 @@ class JadwalController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -646,10 +700,12 @@ class JadwalController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil detail jadwal',
-                'error' => $e->getMessage()
             ], 500);
         }
     }
@@ -708,10 +764,12 @@ class JadwalController extends Controller
                 'data' => $result
             ], 200);
         } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                throw $e;
+            }
             return response()->json([
                 'success' => false,
                 'message' => 'Gagal mengambil jadwal saya',
-                'error' => $e->getMessage()
             ], 500);
         }
     }

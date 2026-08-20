@@ -30,7 +30,7 @@ class AttendanceAndScheduleSeeder extends Seeder
         // Add 10 Izin Guru records for today and future dates
         $this->addIzinGuru($today);
 
-        $this->command->info("✅ All data seeding completed successfully with 10 records each!");
+        $this->command->info("All data seeding completed successfully with 10 records each!");
     }
 
     private function addKehadiranSiswa($today)
@@ -56,10 +56,10 @@ class AttendanceAndScheduleSeeder extends Seeder
                     'updated_at' => $today,
                 ]);
 
-                $this->command->info("✅ Added Kehadiran Siswa record #{$i+1} for {$today->toDateString()}");
+                $this->command->info("Added Kehadiran Siswa record #" . ($i + 1) . " for {$today->toDateString()}");
             }
         } else {
-            $this->command->warn("⚠️  Insufficient data for Kehadiran Siswa seeding");
+            $this->command->warn("Insufficient data for Kehadiran Siswa seeding");
         }
     }
 
@@ -87,10 +87,10 @@ class AttendanceAndScheduleSeeder extends Seeder
                     'updated_at' => $today,
                 ]);
 
-                $this->command->info("✅ Added Kehadiran Guru record #{$i+1} for {$today->toDateString()}");
+                $this->command->info("Added Kehadiran Guru record #" . ($i + 1) . " for {$today->toDateString()}");
             }
         } else {
-            $this->command->warn("⚠️  Insufficient data for Kehadiran Guru seeding");
+            $this->command->warn("Insufficient data for Kehadiran Guru seeding");
         }
     }
 
@@ -124,17 +124,16 @@ class AttendanceAndScheduleSeeder extends Seeder
                     'tanggal' => $tanggal,
                     'guru_asli_id' => $guruAsli->id,
                     'guru_pengganti_id' => $guruPengganti->id,
-                    'alasan_penggantian' => $this->getRandomPenggantiReason(),
                     'status_penggantian' => $this->getRandomPenggantiStatus(),
                     'keterangan' => 'Guru pengganti untuk menggantikan guru asli',
                     'created_at' => $tanggal,
                     'updated_at' => $tanggal,
                 ]);
 
-                $this->command->info("✅ Added Guru Pengganti record #{$i+1} for {$tanggal->toDateString()}");
+                $this->command->info("Added Guru Pengganti record #" . ($i + 1) . " for {$tanggal->toDateString()}");
             }
         } else {
-            $this->command->warn("⚠️  Insufficient data for Guru Pengganti seeding");
+            $this->command->warn("Insufficient data for Guru Pengganti seeding");
         }
     }
 
@@ -165,10 +164,10 @@ class AttendanceAndScheduleSeeder extends Seeder
                     'updated_at' => $tanggalMulai,
                 ]);
 
-                $this->command->info("✅ Added Izin Guru record #{$i+1} for {$tanggalMulai->toDateString()}");
+                $this->command->info("Added Izin Guru record #" . ($i + 1) . " for {$tanggalMulai->toDateString()}");
             }
         } else {
-            $this->command->warn("⚠️  No teachers found for Izin Guru seeding");
+            $this->command->warn("No teachers found for Izin Guru seeding");
         }
     }
 
@@ -220,7 +219,7 @@ class AttendanceAndScheduleSeeder extends Seeder
 
     private function getRandomPenggantiStatus(): string
     {
-        $statuses = ['dijadwalkan', 'selesai', 'dibatalkan'];
+        $statuses = ['pending', 'dijadwalkan', 'selesai', 'tidak_hadir'];
         return $statuses[array_rand($statuses)];
     }
 
